@@ -26,7 +26,7 @@
         <div class="short-hero-images-box">
           <%= f.label :short_hero_image, 'Or select an image from below:' %>
           <div class="short-hero-images">
-            <% ShortArticle::HERO_IMAGES.each_with_index do |h, i| %>
+            <% Article::HERO_IMAGES.each_with_index do |h, i| %>
               <div class="short-hero-image-box">
                 <img src="<%= "/heroes/#{h}" %>" width="115" id="hero_<%= i %>" class="select_image <%= 'selected_image' if ('/heroes/' + h) == @article.short_hero_image %>" />
               </div>

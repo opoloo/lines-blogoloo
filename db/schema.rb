@@ -52,22 +52,6 @@ ActiveRecord::Schema.define(:version => 20130625114938) do
     t.string   "gplus_profile"
   end
 
-  create_table "categories", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "categorizables", :force => true do |t|
-    t.integer  "article_id"
-    t.integer  "category_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
-  add_index "categorizables", ["article_id"], :name => "index_categorizables_on_article_id"
-  add_index "categorizables", ["category_id"], :name => "index_categorizables_on_category_id"
-
   create_table "friendly_id_slugs", :force => true do |t|
     t.string   "slug",                         :null => false
     t.integer  "sluggable_id",                 :null => false

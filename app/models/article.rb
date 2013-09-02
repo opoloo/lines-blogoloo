@@ -38,16 +38,8 @@ class Article < ActiveRecord::Base
     image_ids
   end
 
-  def is_short_article?
-    self.is_a? ShortArticle
-  end
-
   def image_url
-    if self.is_short_article? 
-      self.short_hero_image 
-    else 
-      self.hero_image? ? self.hero_image_url : self.short_hero_image
-    end
+    self.hero_image? ? self.hero_image_url : self.short_hero_image
   end
 
   def sub_title

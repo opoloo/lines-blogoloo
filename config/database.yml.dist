@@ -12,7 +12,7 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: blogoloo_development
+  database: lines_development
   pool: 5
   username: devel
   password: devel
@@ -25,29 +25,18 @@ test:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: blogoloo_test
+  database: lines_test
   pool: 5
   username: root
   password:
   socket: /var/run/mysqld/mysqld.sock
 
-staging:
-  adapter: mysql2
-  encoding: utf8
-  reconnect: false
-  database: blogoloo_staging
-  pool: 5
-  username: blogoloo
-  password: AuZn3ybTMmLVnL9a
-  socket: /var/run/mysqld/mysqld.sock
-
-
 production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: blogoloo
+  database: lines_production
   pool: 5
-  username: blogoloo
-  password: AuZn3ybTMmLVnL9a
+  username: lines
+  password: someVerySecretPassword
   socket: /var/run/mysqld/mysqld.sock
