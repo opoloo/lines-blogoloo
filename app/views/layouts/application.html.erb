@@ -1,0 +1,106 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta charset="UTF-8" />
+  <meta name="author" content="Opoloo" />
+  <meta name="revisit-after" content="3 days" />
+  <meta name="robots" content="index,follow" />
+  <%= display_meta_tags site: "Opoloo's Squirrel Park" %>
+  <meta name="geo.position" CONTENT="50.00; 8.27">
+  <meta name="geo.placename" CONTENT="Opoloo, Emmerich-Josef-Str. 1A, 55116 Mainz">
+  <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1" />
+  <link rel="icon" href="/favicon.png" type="image/png" />
+  <%= yield :head %>
+  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<% if current_user %>
+  <%= render_navbar { "" } %>
+  <div class="spacer"></div>
+<% end %>
+<div id="pagewrap">
+  <a id="top"></a>
+  <div id="meta">
+    <div id="meta_content">
+      <div id="logo">
+          <a href="/">Squirrel Park</a>
+      </div>
+      <div id="opoloo">
+        A blog about Design &amp; Technology by <a href="http://www.opoloo.com" target="_blank">Opoloo</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="content">
+    <%= yield %>
+  </div>
+
+  <div id="footer">
+    <div id="footer_content">
+      <div class="footer-headline">stuff we've created</div>
+      <div class="row projects">
+
+        <div class="two-cols margin-2cols">
+          <div class="project-img">
+            <a href="http://www.opoloo.de/timer"><img src="/assets/favorite.png" alt="all time favorite" /></a>
+          </div>
+          <div class="project-text">
+              <span class="label">all time favorite</span>
+              <a href="http://www.opoloo.de/timer" class="project-title">Timer</a>
+              <p>Yes, we built this simple, beautiful tool for Android. It's slick and smooth, scales perfectly on all devices and orientations, and is pure Holo – dark &amp; light. Designed to make your life a litte easier and more beautiful. Custom sounds included.</p>
+          </div>
+          </div>
+        <div class="two-cols">
+          <div class="project-img">
+            <a href="http://www.lastwebsite.io/"><img src="/assets/latest_project.png" alt="our latest project" /></a>
+          </div>
+          <div class="project-text">
+              <span class="label">our latest project</span>
+              <a href="http://www.lastwebsite.io/" class="project-title">The Last Website</a>
+              <p>A storytelling experiment. A collaboration with The Brothers Chapman, re-imagining the reading experience for mobile browsers. A new kind of immersive literature bringing together textual, aural, and visual elements.</p>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="row aboutopoloo">
+        <div class="two-cols margin-2cols">
+          <div class="about-title">Squirrel Park ...</div>
+          <p>is a playground for us and like-minded squirrels to share reserves of webskills, experience &amp; culture. We're just like those little furry animals: their hearts beat up to 400 times a minute to keep up with their deft and zippy, curious life – crossing impossible gaps and cumulating little treasures of nurturing, tasty morsels.</p>
+        </div>
+        <div class="two-cols">
+          <a href="http://www.opoloo.com" class="about-title">Opoloo ...</a>
+          <p>lovingly creates <a href="http://www.opoloo.com/#portfolio">beautiful apps and web projects</a> with heart and soul. We are a band of six friends who share a passion for doing great things with the web — and mobile. <a href="http://www.opoloo.com/#team">This is what we look like</a>. Opoloo is not just a company, it's a mindset. Take a look around to get to know us and find out how we do the things we do.</p>
+        </div>
+      </div>
+      <div id="copyright">
+	      <span class="weekday">Happy <%= Time.now.strftime("%A") %>.</span>
+        <p>&copy; <%= Time.now.year %> <a href="http://www.opoloo.com">Opoloo</a> | <a href="http://www.opoloo.com/impressum">Imprint</a> | <%= link_to "RSS", articles_url(format: "atom") %> | <a href="http://twitter.com/#!/opoloo" class="twitter"><span>Twitter</span></a> | <a href="http://plus.google.com/104776915031333350956/posts" class="gplus"><span>Google +</span></a> </p>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  (function(){
+    var u="http://analytics.opoloo.de/";
+    _paq.push(['setSiteId', 5]);
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['trackPageView']);
+    var d=document,
+      g=d.createElement('script'),
+      s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript';
+    g.defer=true;
+    g.async=true;
+    g.src=u+'piwik.js';
+    s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Tag -->
+</body>
+</html>

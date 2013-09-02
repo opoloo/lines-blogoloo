@@ -1,0 +1,26 @@
+== Installation
+
+1. clone the repository
+
+2. Change directory to 'blogoloo' and run:
+       cp config/database.yml.dist config/database.yml
+       bundle
+       rake db:create
+       rake db:migrate
+       rake db:seed
+
+== Adding admin users
+
+Atm there's no admin interface for managing users. Just open a console with 'rails c' and add a user manually:
+
+  User.create(email: "your@email.com", password: "yoursecret")
+
+== Administration Interface
+
+Link: http://localhost:3000/admin
+
+== Google Sitemap
+
+We use the gem site,ap_generator (https://github.com/kjvarga/sitemap_generator) to easily create sitemaps. To update the sitemap on server, run:
+
+  rake sitemap:refresh:no_ping
