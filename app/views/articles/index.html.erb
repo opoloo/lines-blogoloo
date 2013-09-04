@@ -9,6 +9,8 @@
   <%= render partial: "article_collection", collection: @articles %>
 </div>
 
+<% if @articles.num_pages > 1 %>
 <div id="pagination">
   <%= paginate @articles, outer_window: 1, window: 2 %>
 </div>
+<% end %>

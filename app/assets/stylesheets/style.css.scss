@@ -151,31 +151,9 @@ $orange: #e8581e;
 /*-----------------------------------------------------------*/
 /*-----------------------------------------------------------*/
 
-img, div {
-  border: 0px;
-  margin: 0px;
-  padding: 0px;
-}
-
-
-div {
-  overflow:hidden;
-}
-
-p, h1 {width: 100%;display:block;min-width:100%}
-
-div.article_header {
-  h1 a {display:block;min-width:100%}
-}
-
-
 * {
   margin:0px;
   padding:0px;
-}
-
-a {
-  text-decoration: none;
 }
 
 body {
@@ -186,6 +164,25 @@ body {
   height:100%;
   background-color:#fff;
 }
+
+img, div {
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+}
+
+div { overflow:hidden; }
+
+p, h1 { width: 100%; display: block; min-width: 100% }
+
+div.article_header {
+  h1 a { display:block; min-width:100% }
+}
+
+a {
+  text-decoration: none;
+}
+
 
 #pagewrap {
   width:auto;
@@ -208,10 +205,7 @@ ul {
   li {
     list-style-position:inside;
   }
-
 }
-
-
 
 div.article_header h1.title {
   font-family: 'Museo';
@@ -229,10 +223,6 @@ div.article_header h1.title {
     color:$darkgrey;
   }
 }
-
-
-
-
 
 i, em {
   font-family: 'UbuntuItalic';
@@ -260,27 +250,28 @@ a:hover {
   color:$orange;
 }
 
-
-
-/*.float-left {
-  float:left;
-  margin:15px 20px 5px 5px;
-}   */
-
 .float-right {
   float:right;
   margin:15px 0px 5px 10px;
 }
+
+.clearfix:before, .clearfix:after {
+    content:"";
+    display:table;
+}
+.clearfix:after {
+    clear:both;
+}
+.clearfix {
+    zoom:1; /* For IE 6/7 (trigger hasLayout) */
+}
+
 
 /*-----------------------------------------------------------*/
 /*-----------------------------------------------------------*/
 /*------------------------  3. HEADER  ----------------------*/
 /*-----------------------------------------------------------*/
 /*-----------------------------------------------------------*/
-
-#meta {
-
-}
 
 #topbar {
   color:#fff;
@@ -306,16 +297,13 @@ a:hover {
   a:hover {
     color:$orange;
   }
-
   #logo {
     float:left;
   }
-  #opoloo {
+  #lines {
     float:right;
     font-size:0.737em;
     text-transform: uppercase;
-
-
   }
 }
 
@@ -340,24 +328,15 @@ div.article {
   margin:0 0 70px 0;
   max-width:480px;
   float:left;
-  .article_googleplus, div.article_footer, div.sub_title {
-    display:none;
-  }
-  .article_content {
-    display:none;
-  }
+  .article_googleplus, div.article_footer, div.sub_title, .article_content { display:none; }
 }
 
 div.article.first {
   max-width:960px;
   border-bottom:1px solid #ccc;
   padding:10px 0 25px 0;
-  .article_googleplus, .article_footer, .article_content, div.sub_title  {
-    display:block;
-  }
-  .article_teaser {
-    display:none;
-  }
+  .article_googleplus, .article_footer, .article_content, div.sub_title  { display:block; }
+  .article_teaser { display:none; }
   div.article_wrapper {
     border-bottom:1px solid #ccc;
     padding:30px 20px 30px 20px;
@@ -375,30 +354,22 @@ div.article.first {
     letter-spacing: 0.05em;
     font-family:'Museo';
   }
-
-
 }
 
-div.article.first.short_article .hero_image {
-  display: none;
-}
+div.article.first.short_article .hero_image { display: none; }
 
-.hero_image {
-  margin:20px 0 0 0;
-}
+.hero_image { margin:20px 0 0 0; }
 
 div.article_wrapper {
   border-top:1px solid #ccc;
   border-bottom:none;
   padding:30px 10px 0px 10px;
   margin:30px 10px 0 10px;
-
 }
 
 div.article_header {
   text-align:center;
   padding:0 15px;
-
 }
 
 
@@ -414,7 +385,6 @@ div.author_name {
   font-size:0.8em;
   text-transform:uppercase;
 }
-
 
 div.article_content {
   line-height:1.8em;
@@ -502,10 +472,8 @@ div.article_footer {
   color:#808080;
   font-size:0.8em;
   padding:0px 80px;
-  a {color:#e8581e;
-  }
-  a:hover {color:#333;
-  }
+  a {color:#e8581e;}
+  a:hover {color:#333;}
 }
 
 div.article_googleplus {
@@ -637,7 +605,7 @@ div.more-link {
     display: block;
     margin:40px 0px;
   }
-  .row.aboutopoloo {
+  .row.about {
     text-align: left;
     .two-cols {
       padding:0px 20px;
@@ -778,15 +746,4 @@ blockquote {
   strong {
     font-family: 'BPmonoBold';
   }
-}
-
-.clearfix:before, .clearfix:after {
-    content:"";
-    display:table;
-}
-.clearfix:after {
-    clear:both;
-}
-.clearfix {
-    zoom:1; /* For IE 6/7 (trigger hasLayout) */
 }

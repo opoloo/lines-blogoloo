@@ -14,7 +14,7 @@ class Article < ActiveRecord::Base
   mount_uploader :hero_image, HeroImageUploader
   mount_uploader :document, DocumentUploader
 
-  paginates_per 10
+  paginates_per CONFIG[:articles_per_page]
 
   acts_as_taggable
 
