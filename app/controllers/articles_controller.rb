@@ -16,13 +16,13 @@ class ArticlesController < ApplicationController
         end
         @first_article = Article.published.first if @articles.first_page?
         set_meta_tags title: SITE_TITLE,
-                      description: 'Opoloo Blog',
+                      description: CONFIG[:meta_description],
                       keywords: KEYWORDS,
                       open_graph: { title: SITE_TITLE,
                                       type: 'website',
                                       url: 'meta_og_url',
                                       site_name: SITE_TITLE,
-                                      image: "http://www.opoloo.de/assets/opoloogo.png"
+                                      image: CONFIG[:og_logo]
                                     }
 
       }
@@ -41,7 +41,7 @@ class ArticlesController < ApplicationController
                                    type: 'article',
                                    url: 'meta_og_url',
                                    site_name: SITE_TITLE,
-                                   image: 'http://blog.opoloo.com' + @article.image_url
+                                   image: CONFIG[:host] + @article.image_url
                                  }
     if request.path != article_path(@article)
       return redirect_to @article, status: :moved_permanently

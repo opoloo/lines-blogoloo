@@ -24,3 +24,5 @@ Link: http://localhost:3000/admin
 We use the gem site,ap_generator (https://github.com/kjvarga/sitemap_generator) to easily create sitemaps. To update the sitemap on server, run:
 
   rake sitemap:refresh:no_ping
+
+Don't forget to adjust the full url to your sitemaps in robots.txt

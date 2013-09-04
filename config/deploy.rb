@@ -1,19 +1,16 @@
 require 'bundler/capistrano'
-#require "rvm/capistrano"
-
-#set :rvm_type, :system
 
 set :stages, %w(production staging)
 set :default_stage, "staging"
 require 'capistrano/ext/multistage'
 
-set :application, "blogoloo"
-set :user, 'kingpinky'
-#set :domain, 'stampy.kunden.opoloo.de'
-#set :port, 981
-set :port, 981
+set :application, "lines"
+set :user, 'your_deployment_user'
+set :port, 22
 
-set :repository,  "git@github.com:opoloo/blogoloo.git"
+# replace this line with your forked repository
+set :repository,  "git@github.com:opoloo/lines.git"
+
 set :scm, :git
 set :branch, 'master'
 set :scm_verbose, true
@@ -22,20 +19,15 @@ role(:web) { domain }
 role(:app) { domain }
 role(:db) { domain }
 
-#role :app, domain
-#role :db,  domain, :primary => true
-
-# deploy config
-#set :deploy_to, applicationdir
 set(:deploy_to) { "#{applicationdir}" }
 set :deploy_via, :export
 set(:git_shallow_clone) { false }
 
 # additional settings
-default_run_options[:pty] = true  # Forgo errors when deploying from windows
+default_run_options[:pty] = true 
 ssh_options[:forward_agent] = true
-ssh_options[:keys] = %w(/home/kingpinky/.ssh/id_dsa)
-set :use_sudo, true
+ssh_options[:keys] = %w(/path/to/your/ssh/key/id_rsa)
+set :use_sudo, false
 
 
 # Passenger

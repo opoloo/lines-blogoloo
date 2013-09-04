@@ -3,12 +3,12 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta charset="UTF-8" />
-  <meta name="author" content="Opoloo" />
+  <meta name="author" content="<%= CONFIG[:meta_author] %>" />
   <meta name="revisit-after" content="3 days" />
   <meta name="robots" content="index,follow" />
   <%= display_meta_tags site: CONFIG[:title] %>
-  <meta name="geo.position" CONTENT=<%= CONFIG[:geo_position] %>>
-  <meta name="geo.placename" CONTENT=<%= CONFIG[:geo_address] %>>
+  <meta name="geo.position" CONTENT="<%= CONFIG[:geo_position] %>">
+  <meta name="geo.placename" CONTENT="<%= CONFIG[:geo_address] %>">
   <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1" />
   <link rel="icon" href="/favicon.png" type="image/png" />
   <%= yield :head %>
@@ -26,7 +26,7 @@
   <div id="meta">
     <div id="meta_content">
       <div id="logo">
-          <a href="/"><img src="/assets/logo.png" alt="Logo Lines" /></a>
+          <a href="/"><img src="<%= CONFIG[:logo] %>" alt="Logo Lines" /></a>
       </div>
       <div id="opoloo">
         <%= CONFIG[:short_description] %>
