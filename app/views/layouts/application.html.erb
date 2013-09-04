@@ -6,9 +6,9 @@
   <meta name="author" content="Opoloo" />
   <meta name="revisit-after" content="3 days" />
   <meta name="robots" content="index,follow" />
-  <%= display_meta_tags site: "Opoloo's Squirrel Park" %>
-  <meta name="geo.position" CONTENT="50.00; 8.27">
-  <meta name="geo.placename" CONTENT="Opoloo, Emmerich-Josef-Str. 1A, 55116 Mainz">
+  <%= display_meta_tags site: CONFIG[:title] %>
+  <meta name="geo.position" CONTENT=<%= CONFIG[:geo_position] %>>
+  <meta name="geo.placename" CONTENT=<%= CONFIG[:geo_address] %>>
   <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1" />
   <link rel="icon" href="/favicon.png" type="image/png" />
   <%= yield :head %>
@@ -29,7 +29,7 @@
           <a href="/"><img src="/assets/logo.png" alt="Logo Lines" /></a>
       </div>
       <div id="opoloo">
-        A Ruby on Rails Developer's Blog
+        <%= CONFIG[:short_description] %>
       </div>
     </div>
   </div>

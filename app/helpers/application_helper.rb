@@ -43,7 +43,7 @@ module ApplicationHelper
   def render_navbar(&block)
     action_link = get_action_link
     if !action_link
-      action_link = "Squirrel Park"
+      action_link = CONFIG[:title_short]
     end
     html = content_tag(:div, id: 'navbar') do
       content_tag(:div, class: 'navbar-inner') do

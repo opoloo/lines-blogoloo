@@ -1,8 +1,8 @@
 atom_feed do |feed|
-  feed.title "Squirrel Park - Opoloo's Blog"
+  feed.title CONFIG[:feed_title]
   feed.updated @articles.maximum(:updated_at)
-  feed.logo "http://blog.opoloo.com/assets/opoloo_feed.png" # aspect ratio should be 2:1
-  feed.icon "http://blog.opoloo.com/favivon.ico" # aspect ratio should be 1:1
+  feed.logo CONFIG[:feed_logo]
+  feed.icon CONFIG[:feed_favicon]
 
   @articles.each do |article|
     feed.entry article, url: article_url(article), published: article.published_at do |entry|

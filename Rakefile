@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Blogoloo::Application.load_tasks
+Lines::Application.load_tasks

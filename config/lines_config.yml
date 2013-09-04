@@ -1,0 +1,22 @@
+# Give your blog a meaningful title. This is used for the HTML title attribute
+title: "Lines Blog - A Blog about Ruby on Rails"
+title_short: "Lines Blog"
+short_description: "A Ruby on Rails Developer's Blog"
+
+geo_position: "50.00; 8.27"
+geo_address: "Opoloo, Emmerich-Josef-Str. 1A, 55116 Mainz"
+
+feed_title: "Lines Blog - A Blog about Ruby on Rails"
+feed_logo: "http://blog.opoloo.com/assets/opoloo_feed.png" # aspect ratio should be 2:1
+feed_favicon: "http://blog.opoloo.com/favivon.ico" # aspect ratio should be 1:1
+
+keywords: "Lines, Blog, Ruby on Rails"
+
+secret_token: "afa4a436180a2febe9b814c6a57b6f3ad298aa82ce0ab4c9e8238713764b665e978f9fad8146587b6cf4a518de4a8f0eac1156cf43a778548e0082629d099fef"
+
+development:
+  host: "localhost:3000"
+test:
+  host: "test.local"
+production:
+  host: "blog.opoloo.com"

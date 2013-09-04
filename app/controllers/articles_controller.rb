@@ -2,8 +2,8 @@ class ArticlesController < ApplicationController
 
   layout 'application'
 
-  KEYWORDS = "Opoloo, Blog"
-  SITE_TITLE = 'Squirrel Park - A Blog by Opoloo'
+  KEYWORDS = CONFIG[:keywords]
+  SITE_TITLE = CONFIG[:title]
 
   def index
     respond_to do |format|
