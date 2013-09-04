@@ -26,7 +26,7 @@ class Article < ActiveRecord::Base
 
   scope :published, where(published: true).order("featured DESC, published_at DESC")
 
-  HERO_IMAGES = %w(blog_hero_android.jpg blog_hero_design.jpg blog_hero_development.jpg blog_hero_photography.jpg blog_hero_writing.jpg)
+  HERO_IMAGES = %w(001_dark.jpg 001.jpg 002_dark.jpg 002.jpg 003_dark.jpg 003.jpg)
 
   def short_hero_image_url
     "#{self.short_hero_image}"
