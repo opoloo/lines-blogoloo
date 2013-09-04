@@ -1,10 +1,14 @@
+# Creates (login) and destroys (logout) sessions
 class SessionsController < ApplicationController
 
   layout "admin"
 
+  
+  # Renders form for creating a new article 
   def new
   end
 
+  # Authenticate user and create a new session.
   def create
     user = User.find_by_email(params[:email])
     if user && user.authenticate(params[:password])
@@ -16,6 +20,7 @@ class SessionsController < ApplicationController
     end
   end
 
+  # Destroys the current session (logout)
   def destroy
     session[:user_id] = nil
     redirect_to root_url, notice: "Logged out!"

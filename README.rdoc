@@ -26,3 +26,9 @@ We use the gem site,ap_generator (https://github.com/kjvarga/sitemap_generator) 
   rake sitemap:refresh:no_ping
 
 Don't forget to adjust the full url to your sitemaps in robots.txt
+
+== Customization
+
+=== Modify custom hero images
+
+You can add, remove or change the +HERO_IMAGES+ variable inside the <tt>app/models/article.rb</tt> model. 

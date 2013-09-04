@@ -1,11 +1,9 @@
 class Admin::ArticlesController < Admin::ApplicationController
 
   autocomplete :tag, :name, class_name: 'ActsAsTaggableOn::Tag'
-  #cache_sweeper :article_sweeper
   before_filter :process_base64_upload, only: [:create, :update]
 
   def index
-    #@articles = Article.order('published_at DESC')
     @articles = Article.order('published ASC, featured DESC, published_at DESC').page(params[:page]).per(25)
     @articles_unpublished = @articles.select{|a| a.published == false}
     @articles_published = @articles.select{|a| a.published == true}

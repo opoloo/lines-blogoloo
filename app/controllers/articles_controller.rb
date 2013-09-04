@@ -1,3 +1,5 @@
+# Lists all Articles and shows specific ones.
+# Responds either to HTML and ATOM requests.
 class ArticlesController < ApplicationController
 
   layout 'application'
@@ -5,6 +7,7 @@ class ArticlesController < ApplicationController
   KEYWORDS = CONFIG[:keywords]
   SITE_TITLE = CONFIG[:title]
 
+  # Lists all published articles
   def index
     respond_to do |format|
       format.html {
@@ -32,6 +35,7 @@ class ArticlesController < ApplicationController
     end
   end
 
+  # Shows specific article
   def show
     @first_page = true
     @article = Article.published.find(params[:id])

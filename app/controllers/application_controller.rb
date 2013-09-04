@@ -9,7 +9,7 @@ private
   end
   helper_method :current_user
 
-  # checks if current user is authirizes. Redirects to login_url if not
+  # checks if current user is authorized. Redirects to login_url if not
   def authorize
     redirect_to login_url, alert: "Not authorized" if current_user.nil?
   end

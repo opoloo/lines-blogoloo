@@ -33,8 +33,6 @@ GEM
     addressable (2.3.3)
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
-    bootstrap-sass (2.3.1.0)
-      sass (~> 3.2)
     builder (3.0.4)
     capistrano (2.14.2)
       highline
@@ -140,6 +138,7 @@ GEM
     rack-ssl-enforcer (0.2.5)
     rack-test (0.6.2)
       rack (>= 1.0)
+    railroady (1.1.1)
     rails (3.2.13)
       actionmailer (= 3.2.13)
       actionpack (= 3.2.13)
@@ -225,7 +224,6 @@ PLATFORMS
 DEPENDENCIES
   acts-as-taggable-on (>= 2.3.3)
   bcrypt-ruby
-  bootstrap-sass
   capistrano
   capybara
   carrierwave
@@ -243,6 +241,7 @@ DEPENDENCIES
   mysql2
   pygments.rb
   rack-ssl-enforcer
+  railroady
   rails (= 3.2.13)
   rails3-jquery-autocomplete
   rb-inotify (~> 0.9)
