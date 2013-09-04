@@ -1,9 +1,11 @@
+# This in an example recipe for deployment via capistrano.
+# Feel free to adjust this recipe to your individual needs
+# More information about capistrano: http://www.capistranorb.com/
+
+
 require 'bundler/capistrano'
 
-set :stages, %w(production staging)
-set :default_stage, "staging"
-require 'capistrano/ext/multistage'
-
+set :default_stage, "production"
 set :application, "lines"
 set :user, 'your_deployment_user'
 set :port, 22
