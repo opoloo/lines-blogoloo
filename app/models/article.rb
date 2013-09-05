@@ -1,3 +1,11 @@
+# Articles are the core of the loines blog. 
+# 
+# An Article must have on or more +Author+s through +Authorable+.
+# 
+# An article extends FriendlyId to provide meaningful slugs instead of the usual id value. 
+# 
+# Slugs are unique and contain the article's title. A incremental numerical value
+# is added to the slug title if the it already exists in the database.
 class Article < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title, use: [:slugged, :history]

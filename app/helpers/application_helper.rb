@@ -1,4 +1,5 @@
 # encoding: utf-8
+# Provides helper methods for views.
 module ApplicationHelper
   
   # Highlights and formats code fragments with Pygments 

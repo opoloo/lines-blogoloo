@@ -1,77 +1,70 @@
+# Provides the CRUD operations for +Article+.
+# Also handles base64 encoded file uploads and toggling of 
+# published and featured state of an +Article+
+# 
+# Inherits from +Admin::ApplicationController+ to ensure authentication.
 class Admin::ArticlesController < Admin::ApplicationController
 
   autocomplete :tag, :name, class_name: 'ActsAsTaggableOn::Tag'
   before_filter :process_base64_upload, only: [:create, :update]
 
+  # Lists all articles. Provides <tt>@articles_unpublished</tt> and 
+  # <tt>@articles_published</tt> to distinguish between published and
+  # unpublished articles
   def index
     @articles = Article.order('published ASC, featured DESC, published_at DESC').page(params[:page]).per(25)
     @articles_unpublished = @articles.select{|a| a.published == false}
     @articles_published = @articles.select{|a| a.published == true}
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @articles }
     end
   end
 
-  # GET /articles/1
-  # GET /articles/1.json
+  # GET /admin/articles/1
   def show
     @article = Article.find(params[:id])
     @first_page = true
 
     respond_to do |format|
       format.html {render :show, layout: 'application'}
-      format.json { render json: @article }
     end
   end
 
-  # GET /articles/new
-  # GET /articles/new.json
+  # GET /admin/articles/new
   def new
     @article = Article.new
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @article }
     end
   end
 
-  # GET /articles/1/edit
+  # GET /admin/articles/1/edit
   def edit
     @article = Article.find(params[:id])
   end
 
-  # POST /articles
-  # POST /articles.json
+  # POST /admin/articles
   def create
     @article = Article.new(params[:article])
 
     respond_to do |format|
       if @article.save
         format.html { redirect_to admin_article_path(@article), notice: 'Article was successfully created.' }
-        format.json { render json: @article, status: :created, location: @article }
       else
         format.html { render action: "new" }
-        format.json { render json: @article.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # PUT /articles/1
-  # PUT /articles/1.json
+  # PUT /admin/articles/1
+  # TODO: Very much is happening here. Move deletion of hero_image to the article model
   def update
     @article = Article.find(params[:id])
     article_params = params[:article]
 
-    #replace picture_path with the new uploaded file
+    # replace picture_path with the new uploaded file
     article_params[:hero_image] = @uploaded_file if @uploaded_file
-
-    if params[:commit] == "Save & publish"
-      article_params[:published] = true
-    end
-    if params[:commit] == "Save & unpublish"
-      article_params[:published] = false
-    end
 
     # delete uploaded hero image when predifined image is selected
     if !article_params[:hero_image_cache].present? && article_params[:short_hero_image].present?
@@ -84,23 +77,19 @@ class Admin::ArticlesController < Admin::ApplicationController
       if @article.update_attributes(article_params)
         ActionController::Base.new.expire_fragment(@article)
         format.html { redirect_to admin_article_path(@article), notice: 'Article was successfully updated.' }
-        format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @article.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /articles/1
-  # DELETE /articles/1.json
+  # DELETE /admin/articles/1
   def destroy
     @article = Article.find(params[:id])
     @article.destroy
 
     respond_to do |format|
       format.html { redirect_to admin_articles_url }
-      format.json { head :no_content }
     end
   end
 

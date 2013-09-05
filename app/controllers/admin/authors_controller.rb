@@ -1,3 +1,4 @@
+# Provides CRUD actions for +Author+ model.
 class Admin::AuthorsController < Admin::ApplicationController
 
   def index

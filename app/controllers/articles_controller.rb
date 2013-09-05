@@ -7,7 +7,8 @@ class ArticlesController < ApplicationController
   KEYWORDS = CONFIG[:keywords]
   SITE_TITLE = CONFIG[:title]
 
-  # Lists all published articles
+  # Lists all published articles.
+  # Responds to html and atom
   def index
     respond_to do |format|
       format.html {
