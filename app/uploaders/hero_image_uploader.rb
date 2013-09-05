@@ -1,5 +1,5 @@
 # encoding: utf-8
-
+# CarrierWave uploader for hero images.
 class HeroImageUploader < CarrierWave::Uploader::Base
 
   include CarrierWave::RMagick
@@ -10,7 +10,6 @@ class HeroImageUploader < CarrierWave::Uploader::Base
 
   # Choose what kind of storage to use for this uploader:
   storage :file
-  # storage :fog
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
@@ -20,6 +19,7 @@ class HeroImageUploader < CarrierWave::Uploader::Base
 
   process :resize_to_limit => [960, 960]
 
+  # Returns URL for image-asset
   def default_url
     "/assets/heroes/" + [filename].compact.join('_')
   end

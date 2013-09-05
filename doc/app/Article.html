@@ -146,6 +146,18 @@
 
   <div id="description" class="description">
     
+<p>Articles are the core of the loines blog.</p>
+
+<p>An <a href="Article.html">Article</a> must have on or more +Author+s
+through <code>Authorable</code>.</p>
+
+<p>An article extends FriendlyId to provide meaningful slugs instead of the
+usual id value.</p>
+
+<p>Slugs are unique and contain the article&#39;s title. A incremental
+numerical value is added to the slug title if the it already exists in the
+database.</p>
+
   </div><!-- description -->
 
   
@@ -215,7 +227,7 @@
 
           
           <div class="method-source-code" id="image_url-source">
-            <pre><span class="ruby-comment"># File app/models/article.rb, line 50</span>
+            <pre><span class="ruby-comment"># File app/models/article.rb, line 58</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">image_url</span>
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">hero_image?</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">hero_image_url</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">short_hero_image</span>
 <span class="ruby-keyword">end</span></pre>
@@ -246,7 +258,7 @@ href="Article.html#HERO_IMAGES">HERO_IMAGES</a> array</p>
 
           
           <div class="method-source-code" id="short_hero_image_url-source">
-            <pre><span class="ruby-comment"># File app/models/article.rb, line 38</span>
+            <pre><span class="ruby-comment"># File app/models/article.rb, line 46</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">short_hero_image_url</span>
   <span class="ruby-node">&quot;#{self.short_hero_image}&quot;</span>
 <span class="ruby-keyword">end</span></pre>
@@ -276,7 +288,7 @@ href="Article.html#HERO_IMAGES">HERO_IMAGES</a> array</p>
 
           
           <div class="method-source-code" id="sub_title-source">
-            <pre><span class="ruby-comment"># File app/models/article.rb, line 55</span>
+            <pre><span class="ruby-comment"># File app/models/article.rb, line 63</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">sub_title</span>
   <span class="ruby-identifier">read_attribute</span>(<span class="ruby-value">:sub_title</span>) <span class="ruby-operator">||</span> <span class="ruby-string">&#39;&#39;</span>
 <span class="ruby-keyword">end</span></pre>
@@ -306,7 +318,7 @@ href="Article.html#HERO_IMAGES">HERO_IMAGES</a> array</p>
 
           
           <div class="method-source-code" id="used_images-source">
-            <pre><span class="ruby-comment"># File app/models/article.rb, line 43</span>
+            <pre><span class="ruby-comment"># File app/models/article.rb, line 51</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">used_images</span>
   <span class="ruby-identifier">result</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">content</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">/!\[.*\]\(.*\/image\/(\d.*)\/.*\)/</span>)
   <span class="ruby-identifier">image_ids</span> = <span class="ruby-identifier">result</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">map</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">i</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">to_i</span> }.<span class="ruby-identifier">uniq</span>

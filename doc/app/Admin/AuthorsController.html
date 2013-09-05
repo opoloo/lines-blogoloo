@@ -152,6 +152,8 @@
 
   <div id="description" class="description">
     
+<p>Provides CRUD actions for <code>Author</code> model.</p>
+
   </div><!-- description -->
 
   
@@ -188,7 +190,7 @@
 
           
           <div class="method-source-code" id="create-source">
-            <pre><span class="ruby-comment"># File app/controllers/admin/authors_controller.rb, line 19</span>
+            <pre><span class="ruby-comment"># File app/controllers/admin/authors_controller.rb, line 20</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">create</span>
   <span class="ruby-ivar">@author</span> = <span class="ruby-constant">Author</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:author</span>])
 
@@ -224,7 +226,7 @@
 
           
           <div class="method-source-code" id="destroy-source">
-            <pre><span class="ruby-comment"># File app/controllers/admin/authors_controller.rb, line 39</span>
+            <pre><span class="ruby-comment"># File app/controllers/admin/authors_controller.rb, line 40</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">destroy</span>
   <span class="ruby-ivar">@author</span> = <span class="ruby-constant">Author</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
   <span class="ruby-keyword">if</span> <span class="ruby-ivar">@author</span>.<span class="ruby-identifier">destroy</span>
@@ -260,7 +262,7 @@
 
           
           <div class="method-source-code" id="edit-source">
-            <pre><span class="ruby-comment"># File app/controllers/admin/authors_controller.rb, line 15</span>
+            <pre><span class="ruby-comment"># File app/controllers/admin/authors_controller.rb, line 16</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">edit</span>
   <span class="ruby-ivar">@author</span> = <span class="ruby-constant">Author</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
 <span class="ruby-keyword">end</span></pre>
@@ -290,7 +292,7 @@
 
           
           <div class="method-source-code" id="index-source">
-            <pre><span class="ruby-comment"># File app/controllers/admin/authors_controller.rb, line 3</span>
+            <pre><span class="ruby-comment"># File app/controllers/admin/authors_controller.rb, line 4</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">index</span>
   <span class="ruby-ivar">@authors</span> = <span class="ruby-constant">Author</span>.<span class="ruby-identifier">all</span>
 <span class="ruby-keyword">end</span></pre>
@@ -320,7 +322,7 @@
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File app/controllers/admin/authors_controller.rb, line 11</span>
+            <pre><span class="ruby-comment"># File app/controllers/admin/authors_controller.rb, line 12</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">new</span>
   <span class="ruby-ivar">@author</span> = <span class="ruby-constant">Author</span>.<span class="ruby-identifier">new</span>
 <span class="ruby-keyword">end</span></pre>
@@ -350,7 +352,7 @@
 
           
           <div class="method-source-code" id="show-source">
-            <pre><span class="ruby-comment"># File app/controllers/admin/authors_controller.rb, line 7</span>
+            <pre><span class="ruby-comment"># File app/controllers/admin/authors_controller.rb, line 8</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">show</span>
   <span class="ruby-ivar">@author</span> = <span class="ruby-constant">Author</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
 <span class="ruby-keyword">end</span></pre>
@@ -380,7 +382,7 @@
 
           
           <div class="method-source-code" id="update-source">
-            <pre><span class="ruby-comment"># File app/controllers/admin/authors_controller.rb, line 29</span>
+            <pre><span class="ruby-comment"># File app/controllers/admin/authors_controller.rb, line 30</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">update</span>
   <span class="ruby-ivar">@author</span> = <span class="ruby-constant">Author</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
 

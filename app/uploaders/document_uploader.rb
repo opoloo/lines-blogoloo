@@ -1,5 +1,5 @@
 # encoding: utf-8
-
+# Carrierwave uploader for docuemnts.
 class DocumentUploader < CarrierWave::Uploader::Base
 
   storage :file

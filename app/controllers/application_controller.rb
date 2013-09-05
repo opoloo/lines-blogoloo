@@ -1,3 +1,5 @@
+# Standard ApplicationConroller. Provides +current_user+ and
+# +authorize+ methods for all inherited controllers. 
 class ApplicationController < ActionController::Base
   protect_from_forgery
 

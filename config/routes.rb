@@ -1,3 +1,4 @@
+# Routing configuration
 Lines::Application.routes.draw do
 
   get 'login', to: 'sessions#new', as: 'login'
@@ -15,13 +16,6 @@ Lines::Application.routes.draw do
   namespace :admin do
     resources :articles do
       get :autocomplete_tag_name, on: :collection
-      get :preview, on: :collection
-      post :toggle_publish
-      post :toggle_feature
-    end
-    resources :short_articles do
-      get :autocomplete_tag_name, on: :collection
-      get :preview, on: :collection
       post :toggle_publish
       post :toggle_feature
     end

@@ -130,6 +130,13 @@
 
   <div id="description" class="description">
     
+<p>Parent controller for the whole admin area. All controllers for the
+<code>Admin</code> namespace inherit from
+<code>Admin::ApplicationController</code></p>
+
+<p>The <code>authorize</code> before filter ensures that all inherited
+controllers and actions  require a logged in user.</p>
+
   </div><!-- description -->
 
   

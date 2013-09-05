@@ -1,5 +1,5 @@
 # encoding: utf-8
-
+# CarrierWave uploader for +Picture+ model. 
 class PictureUploader < CarrierWave::Uploader::Base
 
   include CarrierWave::RMagick
@@ -17,6 +17,7 @@ class PictureUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
+  # Generates +preview+ version.
   version :preview do
     resize_to_limit(100, 100)
   end
