@@ -104,24 +104,14 @@ class Admin::ArticlesController < Admin::ApplicationController
     end
   end
 
-  def preview
-    @article = Article.new(params[:article])
-    @first_page = true
-    respond_to do |format|
-      if @article.valid? or true
-        format.js
-      else
-        format.js {render js: 'alert("Form not valid!");'}
-      end
-    end
-  end
-
+  # Toggles published state of an article
   def toggle_publish
     @article = Article.find(params[:article_id])
     @article.update_attributes(published: !@article.published)
     redirect_to admin_articles_url, notice: 'Article updated!'
   end
 
+  # Toggles featured state of an article
   def toggle_feature
     @article = Article.find(params[:article_id])
     old_featured = Article.find_all_by_featured(true)
@@ -134,6 +124,7 @@ class Admin::ArticlesController < Admin::ApplicationController
     redirect_to admin_articles_url, notice: 'Article updated!'
   end
 
+  # Handles base64 encoded file uploads
   def process_base64_upload
     @uploaded_file = nil
     #check if file is given

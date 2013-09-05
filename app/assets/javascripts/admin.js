@@ -53,11 +53,6 @@ $(document).ready(function() {
     e.preventDefault();
   });
 
-  $('#article_preview').click(function (){
-    $.get('/admin/articles/preview.js', $('.simple_form').serialize(), null, "script");
-    return false;
-  });
-
   // Show datepicker
   $(document).on("focus", "[data-behaviour~='datepicker']", function(e){
     var altFormat = $(this).datepicker( "option", "altFormat" );
