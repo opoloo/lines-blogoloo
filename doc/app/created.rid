@@ -1,5 +1,4 @@
-Thu, 05 Sep 2013 12:38:57 +0200
-doc/README_FOR_APP	Thu, 05 Sep 2013 10:45:15 +0200
+Thu, 05 Sep 2013 12:49:48 +0200
 app/controllers/admin/application_controller.rb	Thu, 05 Sep 2013 10:50:52 +0200
 app/controllers/admin/articles_controller.rb	Thu, 05 Sep 2013 11:06:56 +0200
 app/controllers/admin/authors_controller.rb	Thu, 05 Sep 2013 11:03:44 +0200
@@ -11,8 +10,9 @@ app/helpers/application_helper.rb	Thu, 05 Sep 2013 11:08:26 +0200
 app/models/article.rb	Thu, 05 Sep 2013 12:03:40 +0200
 app/models/author.rb	Wed, 04 Sep 2013 16:34:23 +0200
 app/models/authorable.rb	Wed, 04 Sep 2013 16:34:56 +0200
-app/models/picture.rb	Wed, 04 Sep 2013 16:36:31 +0200
+app/models/picture.rb	Thu, 05 Sep 2013 12:41:37 +0200
 app/models/user.rb	Wed, 04 Sep 2013 16:40:55 +0200
 app/uploaders/document_uploader.rb	Thu, 05 Sep 2013 11:17:40 +0200
 app/uploaders/hero_image_uploader.rb	Thu, 05 Sep 2013 11:18:30 +0200
 app/uploaders/picture_uploader.rb	Thu, 05 Sep 2013 11:19:49 +0200
+doc/Lines	Thu, 05 Sep 2013 10:45:15 +0200

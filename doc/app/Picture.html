@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 
-<title>class Picture - Rails Application Documentation</title>
+<title>class Picture - Lines Blog Documentation</title>
 
 <link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
 
@@ -83,7 +83,7 @@
 
   <ul>
   
-    <li class="file"><a href="./doc/README_FOR_APP.html">README_FOR_APP</a>
+    <li class="file"><a href="./doc/Lines.html">Lines</a>
   
   </ul>
 </nav>
@@ -140,7 +140,9 @@
 
   <div id="description" class="description">
     
-<p>The content of an article can contain multiple pictures</p>
+<p>The content of an <a href="Article.html">Article</a> can contain multiple
+pictures. Pictures are associated to an article through parsing the
+articles content and extracting the ids of the used images.</p>
 
   </div><!-- description -->
 
@@ -178,7 +180,7 @@
 
           
           <div class="method-source-code" id="default_name-source">
-            <pre><span class="ruby-comment"># File app/models/picture.rb, line 16</span>
+            <pre><span class="ruby-comment"># File app/models/picture.rb, line 18</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">default_name</span>
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">image</span>.<span class="ruby-identifier">filename</span>, <span class="ruby-string">&#39;.*&#39;</span>).<span class="ruby-identifier">titleize</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">image</span>
 <span class="ruby-keyword">end</span></pre>
