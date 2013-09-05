@@ -10,9 +10,9 @@ To get an idea of the appearance, see the screenshots and visit this link: http:
 
 == Table of Contents
 
-# {Screenshots}[#screenshots]
-# {Features & Specifications}[#]
-##{Features}[#features]
+- Screenshots[link:#screenshots]
+- Features & Specifications
+  - Features[link:#features]
 
 == Screenshots
 
