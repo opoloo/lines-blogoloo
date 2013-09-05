@@ -1,4 +1,4 @@
-Thu, 05 Sep 2013 11:21:28 +0200
+Thu, 05 Sep 2013 12:38:57 +0200
 doc/README_FOR_APP	Thu, 05 Sep 2013 10:45:15 +0200
 app/controllers/admin/application_controller.rb	Thu, 05 Sep 2013 10:50:52 +0200
 app/controllers/admin/articles_controller.rb	Thu, 05 Sep 2013 11:06:56 +0200
@@ -8,7 +8,7 @@ app/controllers/application_controller.rb	Thu, 05 Sep 2013 11:21:07 +0200
 app/controllers/articles_controller.rb	Thu, 05 Sep 2013 11:07:38 +0200
 app/controllers/sessions_controller.rb	Wed, 04 Sep 2013 16:08:39 +0200
 app/helpers/application_helper.rb	Thu, 05 Sep 2013 11:08:26 +0200
-app/models/article.rb	Thu, 05 Sep 2013 11:12:22 +0200
+app/models/article.rb	Thu, 05 Sep 2013 12:03:40 +0200
 app/models/author.rb	Wed, 04 Sep 2013 16:34:23 +0200
 app/models/authorable.rb	Wed, 04 Sep 2013 16:34:56 +0200
 app/models/picture.rb	Wed, 04 Sep 2013 16:36:31 +0200

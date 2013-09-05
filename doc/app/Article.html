@@ -320,7 +320,7 @@ href="Article.html#HERO_IMAGES">HERO_IMAGES</a> array</p>
           <div class="method-source-code" id="used_images-source">
             <pre><span class="ruby-comment"># File app/models/article.rb, line 51</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">used_images</span>
-  <span class="ruby-identifier">result</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">content</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">/!\[.*\]\(.*\/image\/(\d.*)\/.*\)/</span>)
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">content</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">/!\[.*\]\(.*\/image\/(\d.*)\/.*\)/</span>)
   <span class="ruby-identifier">image_ids</span> = <span class="ruby-identifier">result</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">map</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">i</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">to_i</span> }.<span class="ruby-identifier">uniq</span>
   <span class="ruby-identifier">image_ids</span>
 <span class="ruby-keyword">end</span></pre>
