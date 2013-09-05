@@ -21,8 +21,6 @@ describe Article do
     FactoryGirl.build(:article, short_hero_image: 1 ).should_not be_valid
   end
 
-  it "has images in content"
-
   it "is invalid without one or more authors" do
     FactoryGirl.build(:article, author_ids: nil).should_not be_valid
   end

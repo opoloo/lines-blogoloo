@@ -49,7 +49,7 @@ class Article < ActiveRecord::Base
 
   # Returns array of images used in content
   def used_images
-    result = self.content.scan(/!\[.*\]\(.*\/image\/(\d.*)\/.*\)/)
+    result = content.scan(/!\[.*\]\(.*\/image\/(\d.*)\/.*\)/)
     image_ids = result.nil? ? nil : result.map{ |i| i[0].to_i }.uniq
     image_ids
   end

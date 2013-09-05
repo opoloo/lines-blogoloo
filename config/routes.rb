@@ -6,13 +6,16 @@ Lines::Application.routes.draw do
   get 'tags/:tag', to: 'articles#index', as: :tag
 
   resources :sessions
+
   resources :articles, only: [:index, :show] do
     get 'page/:page', action: :index, on: :collection
   end
+
   resources :short_articles, only: [:index, :show], controller: :articles do
     get 'page/:page', action: :index, on: :collection
   end
 
+  # Admin namespace
   namespace :admin do
     resources :articles do
       get :autocomplete_tag_name, on: :collection
@@ -24,6 +27,7 @@ Lines::Application.routes.draw do
     resources :users
     root :to => 'articles#index'
   end
+  
   root :to => 'articles#index'
 
 end

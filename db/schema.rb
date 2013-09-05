@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(:version => 20130625114938) do
     t.string   "gplus_url"
     t.boolean  "featured",         :default => false
     t.string   "document"
-    t.string   "type"
     t.string   "short_hero_image"
   end
 
