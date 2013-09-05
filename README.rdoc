@@ -8,6 +8,12 @@ Lines is a very slim, feature-constrained, young publishing platform. It is not 
 
 To get an idea of the appearance, see the screenshots and visit this link: http://blog.opoloo.com
 
+== Table of Contents
+
+# {Screenshots}[#screenshots]
+# {Features & Specifications}[#]
+##{Features}[#features]
+
 == Screenshots
 
 == Features & Specifications
@@ -19,7 +25,7 @@ To get an idea of the appearance, see the screenshots and visit this link: http:
 - extendable & customizable
 - full focus on content
 
-== Features
+=== Features
 
 - 960x540 px hero graphics for posts
 - upload default hero images that you want to use more frequently
@@ -36,15 +42,7 @@ To get an idea of the appearance, see the screenshots and visit this link: http:
 - add documents for download
 - formatting help
 - direct RSS reader access
-- code examples in markdown:
-
-  ```javascript
-  function fancyAlert(arg) {
-    if(arg) {
-      $.facebox({div:'#foo'})
-    }
-  }
-  ```
+- code highlighting:
 
 
 == Installation
