@@ -1,5 +1,7 @@
 # encoding: utf-8
 module ApplicationHelper
+  
+  # Highlights and formats code fragments with Pygments 
   class HTMLwithPygments < Redcarpet::Render::XHTML
     def block_code(code, language)
       sha = Digest::SHA1.hexdigest(code)
@@ -9,6 +11,7 @@ module ApplicationHelper
     end
   end
 
+  # Returns formatted and highlighted code fragments
   def markdown(text)
     renderer = HTMLwithPygments.new(hard_wrap: true, filter_html: true, with_toc_data: false)
     options = {
@@ -24,6 +27,7 @@ module ApplicationHelper
     Redcarpet::Markdown.new(renderer, options).render(text).html_safe
   end
 
+  # Returns links in active or inactive state for highlighting current page
   def nav_link(link_text, link_path)
     recognized = Rails.application.routes.recognize_path(link_path)
     class_name = recognized[:controller] == params[:controller] ? 'active' : ''
@@ -32,6 +36,7 @@ module ApplicationHelper
     end
   end
 
+  # Returns HTML with all authors of an article
   def display_article_authors(article, with_info=false)
     authors = article.authors.map{|author| author.gplus_profile.blank? ? author.name : link_to(author.name, author.gplus_profile)}.to_sentence(two_words_connector: " & ", last_word_connector: " & ").html_safe
     if with_info
@@ -40,6 +45,7 @@ module ApplicationHelper
     authors
   end
 
+  # Renders the navigation bar for logged in users
   def render_navbar(&block)
     action_link = get_action_link
     if !action_link
@@ -57,6 +63,7 @@ module ApplicationHelper
     html    
   end
 
+  # Returns site name for actionbar, dependend on current site
   def get_action_link
     if controller_path == 'admin/articles'
       case action_name
@@ -74,4 +81,10 @@ module ApplicationHelper
       end
     end
   end
+
+  # Returns HTML for code blocks formatted with Pygment
+  def format_code(text)
+    simple_format( truncate( Sanitize.clean(markdown(text)), length: 300, separator: ' ', omission: ' ...' ))
+  end
+
 end

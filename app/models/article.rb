@@ -8,7 +8,7 @@ class Article < ActiveRecord::Base
   has_many :authors, through: :authorables
 
   # Attribute access control
-  attr_accessible :content, :hero_image, :short_hero_image, :published, :published_at, :sub_title, :teaser, :title, :pictures,
+  attr_accessible :content, :hero_image, :short_hero_image, :published, :published_at, :sub_title, :title, :pictures,
                   :author_ids, :hero_image_cache, :tag_list, :gplus_url, :featured, :document, :document_cache, :hero_image_file, :remove_document
   attr_accessor :hero_image_file
   accepts_nested_attributes_for :pictures, :authors

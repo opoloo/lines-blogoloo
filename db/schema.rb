@@ -16,7 +16,6 @@ ActiveRecord::Schema.define(:version => 20130625114938) do
   create_table "articles", :force => true do |t|
     t.string   "title"
     t.string   "sub_title"
-    t.text     "teaser"
     t.text     "content"
     t.boolean  "published",        :default => false
     t.datetime "published_at"

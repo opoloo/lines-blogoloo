@@ -1,6 +1,6 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+# Listens to fileuploads for content pictures.
+# Displays a progressbar when an image is uploaded, and a preview 
+# thumbnail for the picture.
 jQuery ->
   $('#new_picture').fileupload
     dataType: "script"

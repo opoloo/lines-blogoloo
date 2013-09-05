@@ -8,16 +8,10 @@ atom_feed do |feed|
     feed.entry article, url: article_url(article), published: article.published_at do |entry|
       entry.title article.title
       entry.summary type: 'xhtml' do |xhtml|
-        xhtml << (article.teaser.blank? ? simple_format(
-            truncate(
-              Sanitize.clean(
-                markdown(article.content)
-              ), length: 300, separator: ' ', omission: ' ...'
-            )
-          ) : markdown(article.teaser).html_safe)
+        xhtml << format_code(article.content)
       end
       entry.content type: 'xhtml' do |xhtml|
-        xhtml << (article.is_short_article? ? '' : content_tag(:p,"<img src=\"#{article.image_url}\" alt=\"#{article.title}\"/>".html_safe).html_safe )
+        xhtml << content_tag(:p,"<img src=\"#{article.image_url}\" alt=\"#{article.title}\"/>".html_safe).html_safe
         xhtml << markdown(article.content).html_safe
       end
       entry.author do |author|

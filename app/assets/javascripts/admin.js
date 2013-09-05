@@ -5,10 +5,9 @@
 //= require jquery-fileupload/basic
 //= require jquery-fileupload/vendor/tmpl
 //= require pictures
-//= require bootstrap
 //= require autosize.min
 
-// Function to insert images into the content at cursor position
+// Function to insert uploaded pictures into the content at cursor position
 jQuery.fn.extend({
   insertAtCaret: function(myValue){
     return this.each(function(i) {
@@ -107,7 +106,9 @@ $(document).ready(function() {
   // Preview Hero Image if selected
   // Check File API support
   if(window.File && window.FileList && window.FileReader) {
-      var filesInput = document.getElementById("article_hero_image");
+    var filesInput = document.getElementById("article_hero_image");
+    if(typeof(filesInput) !== 'undefined' && filesInput != null) {
+
       filesInput.addEventListener("change", function(event) {
         var files = event.target.files;
         if (files.length > 0) {
@@ -135,13 +136,15 @@ $(document).ready(function() {
           $('.hero-image').css("background-image","none");
         }
       });
+    }
   } else {
       alert("Your browser does not support File API");
   }
 
   // File upload
   if(window.File && window.FileList && window.FileReader) {
-      var filesInput = document.getElementById("article_document");
+    var filesInput = document.getElementById("article_document");
+    if(typeof(filesInput) !== 'undefined' && filesInput != null) {
       filesInput.addEventListener("change", function(event) {
         var files = event.target.files;
         if (files.length > 0) {
@@ -160,10 +163,17 @@ $(document).ready(function() {
           $('.choose-files').html("Choose File");
         }
       });
+    }
   } else {
       alert("Your browser does not support File API");
   }
 
+
+  // Close alert boxes
+  $('.alert').click(function(e){
+    e.preventDefault();
+    $(this).slideUp();
+  });
 
   // Formatting Help
   $('.btn-close-formatting').click(function() {

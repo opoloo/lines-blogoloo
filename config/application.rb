@@ -77,8 +77,8 @@ module Lines
     end
 
     config.middleware.use Rack::SslEnforcer, :only => [%r{^/admin}, "/login", %r{^/sessions}],
-                                    :ignore => '/assets', :strict => true,
-                                    :except_hosts => /blogoloo\.herokuapp\.com$/ if Rails.env.production?
+      :ignore => '/assets', :strict => true if Rails.env.production?
+      
   end
 
 end

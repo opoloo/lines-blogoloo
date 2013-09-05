@@ -2,7 +2,7 @@
 
 1. clone the repository
 
-2. Change directory to 'blogoloo' and run:
+2. Change directory to 'lines' and run:
        cp config/database.yml.dist config/database.yml
        bundle
        rake db:create

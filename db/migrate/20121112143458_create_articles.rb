@@ -3,7 +3,6 @@ class CreateArticles < ActiveRecord::Migration
     create_table :articles do |t|
       t.string :title
       t.string :sub_title
-      t.string :teaser
       t.text :content
       t.boolean :published
       t.datetime :published_at
