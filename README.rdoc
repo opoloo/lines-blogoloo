@@ -11,6 +11,7 @@ To get an idea of the appearance, see the screenshots and visit this link: http:
 == Table of Contents
 
 - [Screenshots](link:#screenshots)
+- [[link:#screenshots Screenshots]]
 - Features & Specifications
   - Features[link:#features]
 
