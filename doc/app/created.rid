@@ -1,4 +1,4 @@
-Thu, 05 Sep 2013 16:13:15 +0200
+Thu, 05 Sep 2013 16:39:33 +0200
 app/controllers/admin/application_controller.rb	Thu, 05 Sep 2013 10:50:52 +0200
 app/controllers/admin/articles_controller.rb	Thu, 05 Sep 2013 11:06:56 +0200
 app/controllers/admin/authors_controller.rb	Thu, 05 Sep 2013 11:03:44 +0200
@@ -15,4 +15,4 @@ app/models/user.rb	Wed, 04 Sep 2013 16:40:55 +0200
 app/uploaders/document_uploader.rb	Thu, 05 Sep 2013 11:17:40 +0200
 app/uploaders/hero_image_uploader.rb	Thu, 05 Sep 2013 11:18:30 +0200
 app/uploaders/picture_uploader.rb	Thu, 05 Sep 2013 11:19:49 +0200
-README.rdoc	Thu, 05 Sep 2013 16:13:10 +0200
+README.rdoc	Thu, 05 Sep 2013 16:28:28 +0200
