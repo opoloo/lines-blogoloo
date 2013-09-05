@@ -37,7 +37,7 @@ To get an idea of the appearance, see the screenshots and visit this link: http:
 - formatting help
 - direct RSS reader access
 - code examples in markdown:
-<tt>
+
 ```javascript
 function fancyAlert(arg) {
   if(arg) {
@@ -45,7 +45,7 @@ function fancyAlert(arg) {
   }
 }
 ```
-</tt>
+
 
 == Installation
 
