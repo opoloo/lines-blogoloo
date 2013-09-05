@@ -10,7 +10,7 @@ To get an idea of the appearance, see the screenshots and visit this link: http:
 
 == Table of Contents
 
-- Screenshots[link:#screenshots]
+- [Screenshots](link:#screenshots)
 - Features & Specifications
   - Features[link:#features]
 
