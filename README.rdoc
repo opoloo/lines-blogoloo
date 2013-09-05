@@ -1,3 +1,42 @@
+=Lines Blog
+
+== Introduction
+
+Lines is a customizable blog framework for rails developers. It aims at making publishing simple and beautiful.
+
+Lines is a very slim, feature-constrained, young publishing platform. It is not wordpress or blogger and it doesn't aspire to be. It needs brains, work, and time to mature. It is a framework for tech-savvies who care about their content with the freedom of full OSS access.
+
+To get an idea of the appearance, see the screenshots and visit this link: http://blog.opoloo.com
+
+== Screenshots
+
+== Features & Specifications
+- based on Rails 3.2
+- solid editing system
+- simple, consistent publishing process
+- clear, responsive presentation
+- extendable & customizable
+- full focus on content
+
+== Features
+- 960x540 px hero graphics for posts
+- upload default hero images that you want to use more frequently
+- customizable generic titles & subtitles
+- automatic teaser & scaled image for the article overview
+- determine featured article
+- six headline styles according to priority
+- italics & bold text
+- block quotes
+- images, lists, links
+- code examples in markdown:
+```javascript
+function fancyAlert(arg) {
+if(arg) {
+$.facebox({div:'#foo'})
+}
+}
+```
+
 == Installation
 
 1. clone the repository
