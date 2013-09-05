@@ -40,9 +40,9 @@ To get an idea of the appearance, see the screenshots and visit this link: http:
 <tt>
 ```javascript
 function fancyAlert(arg) {
-if(arg) {
-$.facebox({div:'#foo'})
-}
+  if(arg) {
+    $.facebox({div:'#foo'})
+  }
 }
 ```
 </tt>
