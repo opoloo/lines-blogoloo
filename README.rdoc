@@ -50,6 +50,8 @@ To get an idea of the appearance, see the screenshots and visit this link: http:
   
   bundle exec rake lines:setup
 
+If you need some more information or help, you can just follow this readme file.
+
 
 === Managing admin users
 
