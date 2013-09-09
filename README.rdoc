@@ -84,13 +84,19 @@ Don't forget to adjust the full url to your sitemaps in <tt>public/robots.txt</t
 
 == Customization
 
+=== Modify CSS/SCSS
+
+Admin viewer SCSS: <tt>assets/stylesheets/admin.css.scss</tt>
+
+Default viewer SCSS: <tt>assets/stylesheets/style.css.scss</tt>
+
 === Modify custom hero images
 
 You can add, remove or change the +HERO_IMAGES+ variable inside the <tt>app/models/article.rb</tt> model. 
 
-=== Header
+=== Header & Footer
 
-=== Footer
+To change the header/footer elements you need to open <tt>views/layouts/application.html.erb</tt>
 
 === Other elements
 
