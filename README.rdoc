@@ -75,6 +75,15 @@ To adjust your database details, go to <tt>config/database.yml</tt>
 
 There'll be 3 blocks that contain <tt>username</tt> & <tt>password</tt>. Development-, Test- & Production-Database.
 
+If there is no <tt>config/database.yml</tt>, just copy the <tt>config/database.yml.dist</tt> like that:
+
+    cd config
+    cp database.yml.dist database.yml
+
+or like this (in case you want to stay in your root directory):
+
+    cp config/database.yml.dist config/database.yml
+
 
 === Google Sitemap
 
