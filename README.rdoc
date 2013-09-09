@@ -42,11 +42,19 @@ To get an idea of the appearance, see the screenshots and visit this link: http:
 
 == Installation
 
-1. clone the repository
+1. Clone the repository <tt>git clone git@github.com:opoloo/lines.git</tt>
 
-2. Copy <tt>config/lines_config.yml.example</tt> to <tt>config/lines_config.yml</tt> and adjust the settings as needed. The file is documented, so it should be obvious what you have to adjust.
+2. Switch into the lines directory <tt>cd lines</tt>
 
-3. There is a setup task that will guide you through the rest of the installation process. Just switch to the 'lines' directory and run:
+3. You may need to perform a <tt>bundle install</tt> to get all required bundles installed
+
+4. Copy <tt>config/database.yml.dist</tt> to <tt>config/database.yml</tt> and adjust the database details
+
+5. Create the database by typing in the comand <tt>rake db:create</tt>
+
+6. Copy <tt>config/lines_config.yml.example</tt> to <tt>config/lines_config.yml</tt> and adjust the settings as needed. The file is documented, so it should be obvious what you have to adjust.
+
+7. There is a setup task that will guide you through the rest of the installation process. Just switch to the 'lines' directory and run:
   
   bundle exec rake lines:setup
 
