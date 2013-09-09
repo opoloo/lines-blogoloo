@@ -84,6 +84,8 @@ or like this (in case you want to stay in your root directory):
 
     cp config/database.yml.dist config/database.yml
 
+Rename the <tt>config/database.yml.dist</tt> to <tt>config/database.yml</tt> works as well.
+
 
 === Google Sitemap
 
