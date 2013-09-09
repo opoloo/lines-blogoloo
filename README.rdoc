@@ -42,9 +42,9 @@ To get an idea of the appearance, see the screenshots and visit this link: http:
 
 == Installation
 
-1. clone the repository
+1. Clone the repository <tt>git clone git@github.com:opoloo/lines.git</tt>
 
-2. Copy <tt>config/lines_config.yml.example</tt> to <tt>config/lines_config.yml</tt> and adjust the settings as needed. The file is documented, so it should be obvious what you have to adjust.
+2. Switch into the lines directory <tt>cd lines</tt>
 
 3. There is a setup task that will guide you through the rest of the installation process. Just switch to the 'lines' directory and run:
   
@@ -64,6 +64,16 @@ Currently Lines does not offer a GUI for managing users. Just open a console wit
   u.password = "newsekret"
   u.save
 
+=== Adjust database details
+
+To adjust your database details, go to <tt>config/database.yml</tt>
+
+    username: DATABASE_USERNAME
+    password: DATABASE_PASSWORD
+
+There'll be 3 blocks that contain <tt>username</tt> & <tt>password</tt>. Development-, Test- & Production-Database.
+
+
 === Google Sitemap
 
 We use the gem sitemap_generator (https://github.com/kjvarga/sitemap_generator) to easily create sitemaps. To update the sitemap on server, run:
@@ -76,13 +86,19 @@ Don't forget to adjust the full url to your sitemaps in <tt>public/robots.txt</t
 
 == Customization
 
+=== Modify CSS/SCSS
+
+Admin viewer SCSS: <tt>assets/stylesheets/admin.css.scss</tt>
+
+Default viewer SCSS: <tt>assets/stylesheets/style.css.scss</tt>
+
 === Modify custom hero images
 
 You can add, remove or change the +HERO_IMAGES+ variable inside the <tt>app/models/article.rb</tt> model. 
 
-=== Header
+=== Header & Footer
 
-=== Footer
+To change the header/footer elements you need to open <tt>views/layouts/application.html.erb</tt>
 
 === Other elements
 
