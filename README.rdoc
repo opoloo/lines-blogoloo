@@ -71,6 +71,8 @@ To adjust your database details, go to <tt>config/database.yml</tt>
     username: DATABASE_USERNAME
     password: DATABASE_PASSWORD
 
+There'll be 3 blocks that contain <tt>username</tt> & <tt>password</tt>. Development-, Test- & Production-Database.
+
 
 === Google Sitemap
 
