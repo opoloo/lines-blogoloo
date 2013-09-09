@@ -37,7 +37,7 @@ To get an idea of the appearance, see the screenshots and visit this link: http:
 - add documents for download
 - formatting help
 - direct RSS reader access
-- code highlighting:
+- code highlighting
 
 
 == Installation
@@ -49,6 +49,8 @@ To get an idea of the appearance, see the screenshots and visit this link: http:
 3. There is a setup task that will guide you through the rest of the installation process. Just switch to the 'lines' directory and run:
   
   bundle exec rake lines:setup
+
+If you need some more information or help, you can just follow this readme file.
 
 
 === Managing admin users
@@ -73,6 +75,15 @@ To adjust your database details, go to <tt>config/database.yml</tt>
 
 There'll be 3 blocks that contain <tt>username</tt> & <tt>password</tt>. Development-, Test- & Production-Database.
 
+If there is no <tt>config/database.yml</tt>, just copy the <tt>config/database.yml.dist</tt> like that:
+
+    cd config
+    cp database.yml.dist database.yml
+
+or like this (in case you want to stay in your root directory):
+
+    cp config/database.yml.dist config/database.yml
+
 
 === Google Sitemap
 
@@ -88,19 +99,17 @@ Don't forget to adjust the full url to your sitemaps in <tt>public/robots.txt</t
 
 === Modify CSS/SCSS
 
-Admin viewer SCSS: <tt>assets/stylesheets/admin.css.scss</tt>
+Admin viewer SCSS: <tt>app/assets/stylesheets/admin.css.scss</tt>
 
-Default viewer SCSS: <tt>assets/stylesheets/style.css.scss</tt>
+Default viewer SCSS: <tt>app/assets/stylesheets/style.css.scss</tt>
 
 === Modify custom hero images
 
 You can add, remove or change the +HERO_IMAGES+ variable inside the <tt>app/models/article.rb</tt> model. 
 
-=== Header & Footer
+=== Header (Meta) & Footer
 
-To change the header/footer elements you need to open <tt>views/layouts/application.html.erb</tt>
-
-=== Other elements
+To change the header/meta/footer elements you need to modify <tt>app/views/layouts/application.html.erb</tt>
 
 
 == License
