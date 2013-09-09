@@ -329,6 +329,21 @@ div.article {
   max-width:480px;
   float:left;
   .article_googleplus, div.article_footer, div.sub_title, .article_content { display:none; }
+  .hero_image { 
+    margin:20px 0 0 0;
+    a {
+      display: block;
+      width: 480px;
+      height: 270px;
+      overflow: hidden;
+      background-size: cover;
+      background-position: center;
+      img {
+        width: 480px;
+        opacity: 0;
+      }
+    }
+  }
 }
 
 div.article.first {
@@ -354,11 +369,17 @@ div.article.first {
     letter-spacing: 0.05em;
     font-family:'Museo';
   }
+  div.hero_image {
+    a {
+      width: 960px;
+      height: auto;
+      img {
+        width: 960px;
+      }
+    }
+  }
 }
 
-div.article.first.short_article .hero_image { display: none; }
-
-.hero_image { margin:20px 0 0 0; }
 
 div.article_wrapper {
   border-top:1px solid #ccc;
