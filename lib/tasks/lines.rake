@@ -4,12 +4,12 @@ namespace :lines do
   task :setup => :environment do
 
   begin
+
     # Display note what to do before starting the setup
-    
     puts "\nWhat you should do before you continue:\n\n"
     puts "  1. REQUIRED: Adjust config/database.yml to your needs"
     puts "  2. Optional: Adjust config/lines_config to your needs\n"
-    print "\n\nPress <ENTER> to continue or <CTRL+C> to abort. "
+    print "\nPress <ENTER> to continue or <CTRL+C> to abort. "
     STDIN.gets
 
     # run bundle install
@@ -36,11 +36,16 @@ namespace :lines do
     # Validate and create user
     u = User.new(email: @emailaddr, password: @pw)
     if u.valid? && u.save!
-      puts "\n\nUser created. Now head to #{CONFIG[:host]}/admin to get started."
+      puts "\n\nUser created.\n\n"
     else
       puts "Something went wrong. lets do it again...\n"
       get_credentials
     end
+
+    # Final instructions
+    puts "Congrats! Your Lines blog is now ready to use. Just start the server:"
+    puts "\n  rails s\n"
+    puts  "...and head to #{CONFIG[:host]}/admin to get started.\n\n"
 
   rescue SystemExit, Interrupt
     puts "\n\nBye Bye."
