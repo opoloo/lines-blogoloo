@@ -23,6 +23,14 @@ $orange: #e8581e;
   -webkit-box-sizing: border-box;
 }
 
+@mixin addTransition($x) {
+  transition: all $x+s ease;
+  -o-transition: all $x+s ease;
+  -ms-transition: all $x+s ease;
+  -moz-transition: all $x+s ease;
+  -webkit-transition: all $x+s ease;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -44,11 +52,7 @@ a {
 }
 
 a.btn, input[type=submit].btn {
-  -webkit-transition: 0.3s all ease;
-  -moz-transition: 0.3s all ease;
-  -ms-transition: 0.3s all ease;
-  -o-transition: 0.3s all ease;
-  transition: 0.3s all ease;
+  @include addTransition(0.3);
 }
 
 h1 {
@@ -446,15 +450,17 @@ hr {
       }
       .documents {
         position: relative;
+        cursor: pointer;
         .choose-files {
+          @include addTransition(0.3);
           border: 1px solid #ebebeb;
           background-color: #f2f2f2;
           width: 100%;
           @include border-box();
           height: 43px;
           text-align: center;
-          cursor: pointer;
           color: $darkgrey;
+          cursor: pointer;
           display: block;
           line-height: 43px;
           font-size: 15px;
@@ -474,6 +480,11 @@ hr {
           top: 0px;
           left: 0px;
           opacity: 0;
+        }
+        &:hover {
+          .choose-files {
+            background-color: darken(#f2f2f2, 15%);
+          }
         }
       }
       &.input-text {

@@ -4,6 +4,13 @@ $text: #e3e3e3;
 $btn: #434343;
 $btn_active: $orange;
 
+@mixin addTransition($x) {
+  transition: all $x+s ease;
+  -o-transition: all $x+s ease;
+  -ms-transition: all $x+s ease;
+  -moz-transition: all $x+s ease;
+  -webkit-transition: all $x+s ease;
+}
 
 .btn {
   font-family: 'Cabin', sans-serif;
@@ -57,12 +64,16 @@ $btn_active: $orange;
       height: 60px;
       display: inline-block;
       float: left;
-      margin-right: 5px;
+      margin-right: 10px;
+      @include addTransition(0.3);
       a {
         display: inline-block;
         background: transparent url(/assets/ic_action_home.png) no-repeat scroll center center;
         height: 60px;
         width: 60px;
+      }
+      &:hover {
+        background-color: $btn;
       }
     }
     span.actionlink {
