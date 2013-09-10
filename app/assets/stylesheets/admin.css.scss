@@ -90,7 +90,7 @@ hr {
     padding: 0px 15px;
     .btn {
       font-family: 'Cabin', sans-serif;
-      font-size: 18px;
+      font-size: 16px;
       color: #ffffff;
       padding: 10px 15px;
       letter-spacing: 0.03em;
@@ -307,6 +307,10 @@ hr {
 
 .new-article, .new-author {
   margin-bottom: 120px;
+  hr {
+    border-bottom: 1px solid #E2E3E4;
+    margin-bottom: 30px;
+  }
   .row {
     width: 100%;
     margin-bottom: 30px;
@@ -422,6 +426,7 @@ hr {
         font-size: 16px;
         line-height: 22px;
         resize: none;
+        min-height: 208px;
       }
       > .checkbox {
         display: inline-block;
