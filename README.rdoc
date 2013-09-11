@@ -120,5 +120,5 @@ You may use the Lines blog template as you please. You must, however, keep the f
 
 We heartily invite you to extend the features of the template, but when you do, you should fork it on GitHub, so everyone can profit from your work.
 
-You can see the full license here: 
+You can see the full license here: http://choosealicense.com/licenses/lgpl-v3/
 
