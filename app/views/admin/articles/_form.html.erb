@@ -24,7 +24,7 @@
       </div>
       <div class="additional">
         <div class="short-hero-images-box">
-          <%= f.label :short_hero_image, 'Or select an image from below:' %>
+          <h2>Default images</h2>
           <div class="short-hero-images">
             <% Article::HERO_IMAGES.each_with_index do |h, i| %>
               <div class="short-hero-image-box">
@@ -70,7 +70,7 @@
         <%= f.text_area :content %>
       </div>
       <div class="additional">
-        <a href="#formatting_guide" data-toggle="modal" class="btn-formatting-help">Formatting Help &raquo;</a>
+        <a href="#formatting_guide" data-toggle="modal" class="btn-formatting-help">&lt;/&gt; Formatting Help</a>
       </div>
     </div>
 
@@ -94,7 +94,7 @@
         <% end %>
       </div>
       <div class="additional">
-        <%= link_to "Add new author »", new_admin_author_path(), class: "add-new-author" %>
+        <%= link_to "+ Add new author", new_admin_author_path(), class: "add-new-author" %>
       </div>
     </div>
 
