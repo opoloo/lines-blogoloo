@@ -1,17 +1,17 @@
-Rake::Task["doc:app"].clear
-Rake::Task["doc/app"].clear
-Rake::Task["doc/app/index.html"].clear
+# Rake::Task["doc:app"].clear
+# Rake::Task["doc/app"].clear
+# Rake::Task["doc/app/index.html"].clear
 
-namespace :doc do
-  Rake::RDocTask.new('app') do |rdoc|
-    rdoc.rdoc_dir = 'doc/app'
-    rdoc.title    = 'Lines Blog Documentation'
-    rdoc.main     = 'README.rdoc' # define README_FOR_APP as index
+# namespace :doc do
+#   Rake::RDocTask.new('app') do |rdoc|
+#     rdoc.rdoc_dir = 'doc/app'
+#     rdoc.title    = 'Lines Blog Documentation'
+#     rdoc.main     = 'README.rdoc' # define README_FOR_APP as index
 
-    rdoc.options << '--charset' << 'utf-8'
+#     rdoc.options << '--charset' << 'utf-8'
 
-    rdoc.rdoc_files.include('app/**/*.rb')
-    rdoc.rdoc_files.include('lib/**/*.rb')
-    rdoc.rdoc_files.include('README.rdoc')
-  end
-end
+#     rdoc.rdoc_files.include('app/**/*.rb')
+#     rdoc.rdoc_files.include('lib/**/*.rb')
+#     rdoc.rdoc_files.include('README.rdoc')
+#   end
+# end
