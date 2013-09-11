@@ -37,6 +37,11 @@ jQuery.fn.extend({
 });
 
 $(document).ready(function() {
+  // Deactivate OnBeforeUnload on submit button
+  $('.btn-save-publish').click(function() {
+    window.onbeforeunload = null;
+  });
+
   // Autogrow copy box
   $('#article_content').autosize();
 
