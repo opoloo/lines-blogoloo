@@ -103,71 +103,65 @@ $(document).ready(function() {
     return false;
   });
 
-  // Preview Hero Image if selected
-  // Check File API support
-  if(window.File && window.FileList && window.FileReader) {
-    var filesInput = document.getElementById("article_hero_image");
-    if(typeof(filesInput) !== 'undefined' && filesInput != null) {
-
-      filesInput.addEventListener("change", function(event) {
-        var files = event.target.files;
-        if (files.length > 0) {
-            var file = files[0];
-
-            //Only pics
-            if(!file.type.match('image'))
-              return false;
-            var picReader = new FileReader();
-            
-            picReader.addEventListener("load",function(event){
-              var picFile = event.target;
-
-              $('.hero-image').css("background-image","url("+picFile.result+")");
-              $('.hero-image').css("background-size","cover");
-
-              $('.choose-file').html("Change Image");
-              $('.short-hero-images').append("<div class=\"short-hero-image-box\"><img src=\""+picFile.result+"\" width=\"115\" class=\"select_image uploaded_image\" /></div>");
-            });
-            
-            // Read the image
-            picReader.readAsDataURL(file);
-        } else {
-          $('.choose-file').html("Choose Image");
-          $('.hero-image').css("background-image","none");
-        }
-      });
+  // File Reader for hero image and document upload
+  // If you need more input fields like this, you need to add an event listener for every input field
+  // You also need to insert a case for every input inside of the "handleFiles" function below ($type_id)
+  if (window.File && window.FileList && window.FileReader) {
+    var hero_input      = document.getElementById('article_hero_image');  // Hero image input
+    var document_input  = document.getElementById('article_document');    // Document input
+    if (typeof(hero_input) !== 'undefined' && hero_input != null && typeof(document_input) !== 'undefined' && document_input != null) {
+      hero_input.addEventListener('change', handleFiles, false);          // Add listener to the hero image input
+      document_input.addEventListener('change', handleFiles, false);      // Add listener to the document input
     }
   } else {
-      alert("Your browser does not support File API");
+    alert("You need a browser with file reader support, to use this form properly.");
   }
 
-  // File upload
-  if(window.File && window.FileList && window.FileReader) {
-    var filesInput = document.getElementById("article_document");
-    if(typeof(filesInput) !== 'undefined' && filesInput != null) {
-      filesInput.addEventListener("change", function(event) {
-        var files = event.target.files;
-        if (files.length > 0) {
-          var file = files[0];
-          
-          var picReader = new FileReader();
-          
-          picReader.addEventListener("load",function(event){
-            var picFile = event.target;
-            $('.choose-files').html(file.name);
-          });
-          
-          // Read the image
-          picReader.readAsDataURL(file);                             
-        } else {
-          $('.choose-files').html("Choose File");
+  // This function handels the hero image & documents
+  // It generates a live preview (image/name) of the selected file
+  function handleFiles(event) {
+    var files   = event.target.files;       // Get current file
+    var type_id = event.currentTarget.id;   // Get the # of the current input field
+
+    if (files.length > 0) {
+      var file = files[0];
+      var reader = new FileReader();
+
+      // Check format
+      if (type_id == 'article_hero_image') {
+        if (!file.type.match('image')) {
+          return false;
+        }
+      } else if (type_id == 'article_document') {
+        // Nothing to do here yet ...
+      }
+
+      // Load file
+      reader.addEventListener("load",function(event) {
+        var loadedFile = event.target;
+
+        if (type_id == 'article_hero_image') {
+          $('.hero-image').css("background-image","url("+loadedFile.result+")");
+          $('.hero-image').css("background-size","cover");
+
+          $('.choose-file').html("Change Image");
+          $('.short-hero-images').append("<div class=\"short-hero-image-box\"><img src=\""+loadedFile.result+"\" width=\"115\" class=\"select_image uploaded_image\" /></div>");
+        } else if (type_id == 'article_document') {
+          $('.choose-files').html(file.name);
         }
       });
-    }
-  } else {
-      alert("Your browser does not support File API");
-  }
 
+      // Read the file
+      reader.readAsDataURL(file);
+    } else {
+      if (type_id == 'article_hero_image') {
+        $('.choose-file').html("Choose Image");
+        $('.hero-image').css("background-image","none");
+      } else if (type_id == 'article_document') {
+        $('.choose-files').html("Choose File");
+      }
+    }
+  }
 
   // Close alert boxes
   $('.alert').click(function(e){
