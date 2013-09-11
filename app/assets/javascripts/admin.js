@@ -38,11 +38,14 @@ jQuery.fn.extend({
 
 $(document).ready(function() {
   // Deactivate OnBeforeUnload on submit button
+  // You can add even more buttons, just add the class or id of the button/link
+  // All buttons/links which are listed below will not produce a "Warning"-Alert on leaving the page when something has changed but not saved
   $('.btn-save-publish').click(function() {
     window.onbeforeunload = null;
   });
 
-  // Autogrow copy box
+  // Autogrow and -shrink the content text box while typing
+  // This allows the user to see the whole text copy all the time
   $('#article_content').autosize();
 
   // Close error notification
@@ -64,7 +67,8 @@ $(document).ready(function() {
     $(this).datepicker({dateFormat: "yy-mm-dd"});
   });
 
-  // Select hero image
+  // Select a default hero image
+  // Switch classes and preview the selected default image in the hero image canvas
   $(".select_image").live('click', function(e){
     e.preventDefault();
     
@@ -92,6 +96,7 @@ $(document).ready(function() {
   });
 
   // Unselect hero image on upload
+  // If a custom image is selected of the hard drive, the current selected default image will be unselected
   $('#article_hero_image').on('change', function(e){
     $(".selected_image").removeClass('selected_image');
     $("#article_short_hero_image").val('');      
@@ -140,6 +145,8 @@ $(document).ready(function() {
       reader.addEventListener("load",function(event) {
         var loadedFile = event.target;
 
+        // Change labels, background and so on
+        // Different action depending on the type_id
         if (type_id == 'article_hero_image') {
           $('.hero-image').css("background-image","url("+loadedFile.result+")");
           $('.hero-image').css("background-size","cover");
@@ -154,6 +161,8 @@ $(document).ready(function() {
       // Read the file
       reader.readAsDataURL(file);
     } else {
+      // Change labels, background and so on
+      // Different action depending on the type_id
       if (type_id == 'article_hero_image') {
         $('.choose-file').html("Choose Image");
         $('.hero-image').css("background-image","none");
@@ -163,13 +172,13 @@ $(document).ready(function() {
     }
   }
 
-  // Close alert boxes
+  // Close notification boxes below the navbar
   $('.alert').click(function(e){
     e.preventDefault();
     $(this).slideUp();
   });
 
-  // Formatting Help
+  // Formatting Help functions
   $('.btn-close-formatting').click(function() {
     $('#formatting_guide').fadeOut();
   });
