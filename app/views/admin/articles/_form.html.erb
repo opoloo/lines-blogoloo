@@ -94,7 +94,7 @@
         <% end %>
       </div>
       <div class="additional">
-        <%= link_to "Add new author »", new_admin_author_path(), class: "add-new-author", target: "_blank" %>
+        <%= link_to "Add new author »", new_admin_author_path(), class: "add-new-author" %>
       </div>
     </div>
 
@@ -164,7 +164,7 @@
     </div>
 
     <%= render_navbar do %>
-      <%= f.submit "Save Article", class: "btn btn-save-publish" %>
+      <%= f.submit "Save Article", class: "btn btn-save-publish", onclick: "window.onbeforeunload = null;" %>
       <%= link_to "Cancel", admin_articles_path, class: "btn btn-cancel" %>
     <% end %>        
 
@@ -172,3 +172,9 @@
 <% end %>
 
 <div id="preview_box"></div>
+
+<script type="text/javascript">
+window.onbeforeunload = function() {
+    return 'You have NOT saved your article. Stop and save if you want to keep your changes.';
+}
+</script>
