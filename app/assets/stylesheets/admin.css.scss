@@ -571,6 +571,9 @@ hr {
         cursor: pointer;
       }
       .short-hero-images-box {
+        h2 {
+          margin: 0;
+        }
         .short-hero-images {
           height: 275px;
           overflow-y: scroll;
