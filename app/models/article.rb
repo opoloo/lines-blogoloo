@@ -39,7 +39,8 @@ class Article < ActiveRecord::Base
   # Model Scopes
   scope :published, where(published: true).order("featured DESC, published_at DESC")
 
-  # Predifined hero images. Adjust to your need
+  # Predifined hero images.
+  # Images are loaded from the <tt>public/heroes</tt> directory
   HERO_IMAGES = %w(001_dark.jpg 001.jpg 002_dark.jpg 002.jpg 003_dark.jpg 003.jpg)
 
   # Returns URL of selected image from HERO_IMAGES array

@@ -33,6 +33,7 @@ end
 group :development do
   gem 'seed_dump'
   gem 'capistrano'
+  gem 'yard'
 end
 
 group :development, :test do
