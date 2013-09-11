@@ -70,7 +70,7 @@
         <%= f.text_area :content %>
       </div>
       <div class="additional">
-        <a href="#formatting_guide" data-toggle="modal" class="btn btn-formatting-help">&lt;&gt; Formatting Help</a>
+        <a href="#formatting_guide" data-toggle="modal" class="btn-formatting-help">Formatting Help &raquo;</a>
       </div>
     </div>
 
@@ -94,7 +94,7 @@
         <% end %>
       </div>
       <div class="additional">
-        <%= link_to "Add new author", admin_authors_path(), class: "btn btn-formatting-help" %>
+        <%= link_to "Add new author »", new_admin_author_path(), class: "add-new-author", target: "_blank" %>
       </div>
     </div>
 

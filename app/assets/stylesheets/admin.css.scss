@@ -550,17 +550,21 @@ hr {
         display: inline-block;
       }
       .btn-formatting-help {
-        display: block;
-        width: 100%;
-        @include border-box();
-        background: #f2f2f2;
-        color: #333333 !important;
-        text-align: center;
+        color: $orange;
+        display: inline-block;
+        margin-top: 10px;
         text-transform: uppercase;
-        padding: 0;
-        transition: .3s ease;
+        @include addTransition(0.3);
         &:hover {
-          background: darken(#f2f2f2, 10%);
+          color: darken($orange, 15%);
+        }
+      }
+      .add-new-author {
+        text-transform: uppercase;
+        color: $orange;
+        @include addTransition(0.3);
+        &:hover {
+          color: darken($orange, 15%);
         }
       }
       img {
@@ -644,6 +648,7 @@ hr {
       width: 92px;
       overflow: hidden;
       position: relative;
+      cursor: pointer;
       .picture {
         width: 92px;
         height: 92px;
@@ -701,6 +706,13 @@ hr {
       img {
         border: 1px solid #e2e3e4;
         height: 90px;
+        cursor: pointer;
+        @include addTransition(0.3);
+      }
+      &:hover {
+        img {
+          border: 1px solid darken(#e2e3e4, 20%);
+        }
       }
     }
   }
