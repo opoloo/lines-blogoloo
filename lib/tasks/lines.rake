@@ -8,7 +8,7 @@ namespace :lines do
     # Display note what to do before starting the setup
     puts "\nWhat to do before you continue:\n\n"
     puts "  1. Rename or copy config/database.yml.dist to config/database.yml"
-    puts "  2. Adjust config/database.ynl to your needs:"
+    puts "  2. Adjust config/database.yml to your needs:"
     puts "       username: DATABASE_USERNAME"
     puts "       password: DATABASE_PASSWORD"
     puts "     There’ll be 3 blocks that contain username & password: development-, test- & production-database.\n\n"
@@ -23,32 +23,35 @@ namespace :lines do
     end
 
     # Run migrations
+    Rake::Task["db:create"].invoke
     Rake::Task["db:migrate"].invoke
-    puts "Migration done.\n\n"
-    
-    # Seed default db entries if no entries exist yet
-    if Article.count == 0 || Author.count == 0
-      puts "Importing example articlesand author...\n"
-      Rake::Task["db:seed"].invoke
-      puts "Done."
-    end
-    
+    puts "Database created and migrations run.\n\n"
+        
     # Get user's credentials
     puts "\n\nLets create a user for administration. This step is required to be able to login.\n\n"
     get_credentials
     
-    # Validate and create user
+    # Validate and create user/author
     u = User.new(email: @emailaddr, password: @pw)
-    if u.valid? && u.save!
+    a = Author.new(email: @emailaddr, name: @author_name, description: "I'm the owner of this blog")
+    if u.valid? && a.valid? && u.save! && a.save!
       puts "\n\nUser created.\n\n"
     else
       puts "Something went wrong. lets do it again...\n"
       get_credentials
     end
 
+    # Seed default db entries if no entries exist yet
+    if Article.count == 0 || Author.count == 0
+      puts "Importing example articles and author...\n"
+      Rake::Task["db:seed"].invoke
+      puts "Done."
+    end
+
+
     # Final instructions
-    puts "Congrats! Your Lines blog is now ready to use. Just start the server:"
-    puts "\n  rails s\n"
+    puts "\n\nCongrats! Your Lines blog is now ready to use. Just start the server:"
+    puts "\n  rails server\n"
     puts  "...and head to #{CONFIG[:host]}/admin to get started.\n\n"
 
   rescue SystemExit, Interrupt
@@ -62,6 +65,8 @@ namespace :lines do
   
   # Reads credentials(email and password) from STDIN
   def get_credentials
+    print "Your name: "
+    @author_name = STDIN.gets.strip.to_s
     print "Your Emailaddress: "
     @emailaddr = STDIN.gets.strip.to_s
     print "Choose a password: "
