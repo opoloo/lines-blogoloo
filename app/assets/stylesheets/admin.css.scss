@@ -42,7 +42,7 @@ $orange: #e8581e;
 
 body {
   background-color: #fbfbfb;
-  color: #333333;
+  color: $darkgrey;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
 }
@@ -163,13 +163,13 @@ hr {
           overflow: hidden;
           white-space: nowrap;
           a {
-            color: #e8581e;
+            color: $orange;
             display: inline-block;
             width: 100%;
           }
           &:hover {
             a {
-              color: #333333;
+              color: $darkgrey;
             }
           }
         }
@@ -266,13 +266,13 @@ hr {
           width: 285px;
           padding: 0px 20px;
           a {
-            color: #e8581e;
+            color: $orange;
             display: inline-block;
             width: 100%;
           }
           &:hover {
             a {
-              color: #333333;
+              color: $darkgrey;
             }
           }
         }
@@ -370,7 +370,7 @@ hr {
           text-transform: uppercase;
           text-align: center;
           cursor: pointer;
-          transition: .3s ease;
+          @include addTransition(0.3);
           margin-top: 110px;
           &:hover {
             background-color: lighten(rgba(147,147,147,0.5), 15%);
