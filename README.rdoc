@@ -6,8 +6,7 @@ Lines is a customizable blog framework for rails developers. It aims at making p
 
 Lines is a very slim, feature-constrained, young publishing platform. It is not wordpress or blogger and it doesn't aspire to be. It needs brains, work, and time to mature. It is a framework for tech-savvies who care about their content with the freedom of full OSS access.
 
-To get an idea of the appearance, visit the {Lines Website}[http://lines.opoloo.com] or see it in action at link: http://blog.opoloo.com
-
+To get an idea of the appearance, see the screenshots below, visit the {Lines Website}[http://lines.opoloo.com], or see it in action at link: http://blog.opoloo.com
 
 == Features & Specifications
 
@@ -111,6 +110,19 @@ You can add, remove or change the +HERO_IMAGES+ variable inside the <tt>app/mode
 === Header (Meta) & Footer
 
 To change the header/meta/footer elements you need to modify <tt>app/views/layouts/application.html.erb</tt>
+
+== Screenshots
+
+Some screenshots to get an impression of the look & feel
+
+=== Dashboard
+{<img src="http://lines.opoloo.com/images/screenshot_01.png" width="50%" />}[http://lines.opoloo.com]
+
+=== Create or edit an article
+{<img src="http://lines.opoloo.com/images/screenshot_02.png" width="50%" />}[http://lines.opoloo.com]
+
+=== Preview and publish
+{<img src="http://lines.opoloo.com/images/screenshot_03.png" width="50%" />}[http://lines.opoloo.com]
 
 
 == License
