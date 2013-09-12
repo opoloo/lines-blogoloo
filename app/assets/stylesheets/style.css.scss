@@ -11,7 +11,6 @@ $orange: #e8581e;
 }
 
 /*------------------------  1. FONTS  -----------------------*/
-
 @font-face {
   font-family: 'BPmono';
   src: url('/fonts/BPmono-webfont.eot');
@@ -137,12 +136,21 @@ img, div {
   padding: 0px;
 }
 
-div { overflow:hidden; }
+div {
+  overflow:hidden;
+}
 
-p, h1 { width: 100%; display: block; min-width: 100% }
+p, h1 {
+  width: 100%;
+  display: block;
+  min-width: 100%;
+}
 
 div.article_header {
-  h1 a { display:block; min-width:100% }
+  h1 a {
+    display:block;
+    min-width:100%;
+  }
 }
 
 a {
@@ -698,11 +706,9 @@ div.more-link {
   }
 }
 
-
 .margin-2cols {
   margin-right:8%;
 }
-
 
 hr {
   background-color:#3d3d3d;
@@ -713,11 +719,9 @@ hr {
   margin:30px 0px;
 }
 
-
 div.rss {
   display:none;
 }
-
 
 blockquote {
   font-family: 'BPmono';
