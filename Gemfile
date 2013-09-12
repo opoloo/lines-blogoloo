@@ -31,7 +31,6 @@ group :production do
 end
 
 group :development do
-  gem 'seed_dump'
   gem 'capistrano'
   gem 'yard'
 end
