@@ -108,6 +108,8 @@ $(document).ready(function() {
     return false;
   });
 
+
+
   // File Reader for hero image and document upload
   // If you need more input fields like this, you need to add an event listener for every input field
   // You also need to insert a case for every input inside of the "handleFiles" function below ($type_id)
@@ -188,4 +190,12 @@ $(document).ready(function() {
   $('.btn-formatting-help').click(function() {
     $('#formatting_guide').fadeIn();
   });
+  
+  // Show security alert on unload only when something has changed
+  $('.edit_article input, .edit_article textarea, .new_article input, .new_article textarea').bind("keyup change", function() {
+    window.onbeforeunload = function() {
+      return 'You have NOT saved your article. Stop and save if you want to keep your changes.';
+    }
+  });
+
 });
