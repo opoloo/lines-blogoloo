@@ -1,4 +1,4 @@
-# Articles are the core of the loines blog. 
+# Articles are the core of the lines blog. 
 # 
 # An Article must have on or more +Author+s through +Authorable+.
 # 
