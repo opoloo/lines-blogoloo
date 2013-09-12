@@ -624,13 +624,14 @@ div.more-link {
 
 
   }
-  .about-title {
+  h2, h2 a {
     display:block;
     text-transform: uppercase;
     font-family: 'MuseoLight';
     font-size:22px;
     margin:0 0 10px 0px;
     letter-spacing: 0.03em;
+    font-weight: normal;
   }
   span.label {
     text-transform: uppercase;
