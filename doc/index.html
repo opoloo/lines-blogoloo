@@ -136,7 +136,7 @@ authors)</p>
 </li><li>
 <p>Switch into the lines directory <code>cd lines</code></p>
 </li><li>
-<p>There is a setup task that will guide you through the rest of the
+<p>There is a installation task that will guide you through the rest of the
 installation process. Just switch to the &#39;lines&#39; directory and run:</p>
 </li></ol>
 
@@ -179,14 +179,15 @@ password: DATABASE_PASSWORD</code></pre>
 
 <pre class="code ruby"><code class="ruby">cp config/database.yml.dist config/database.yml</code></pre>
 
-<p>Rename the <code>config/database.yml.dist</code> to
+<p>Renaming the <code>config/database.yml.dist</code> to
 <code>config/database.yml</code> works as well.</p>
 
 <h3 id="label-Google+Sitemap">Google Sitemap</h3>
 
-<p>We use the gem sitemap_generator (<a
+<p>The sitemap_generator gem (<a
 href="https://github.com/kjvarga/sitemap_generator">github.com/kjvarga/sitemap_generator</a>)
-to easily create sitemaps. To update the sitemap on server, run:</p>
+handles the creation of sitemaps for search engines. To update the sitemap
+on server, run:</p>
 
 <pre class="code ruby"><code class="ruby">bundle exec rake sitemap:refresh:no_ping # don&#39;t ping search engines
 bundle exec rake sitemap:refresh         # ping search engines</code></pre>
@@ -205,7 +206,8 @@ bundle exec rake sitemap:refresh         # ping search engines</code></pre>
 <h3 id="label-Modify+custom+hero+images">Modify custom hero images</h3>
 
 <p>You can add, remove or change the <code>HERO_IMAGES</code> variable inside
-the <code>app/models/article.rb</code> model.</p>
+the <code>app/models/article.rb</code> model. The corresponding images
+reside inside the <code>public/heroes</code> directory.</p>
 
 <h3 id="label-Header+%28Meta%29+%26+Footer">Header (Meta) &amp; Footer</h3>
 
@@ -220,11 +222,12 @@ the footer section, so attribution to Lines and Opoloo is granted.</p>
 <p>We heartily invite you to extend the features of the template, but when you
 do, you should fork it on GitHub, so everyone can profit from your work.</p>
 
-<p>You can see the full license here:</p>
+<p>You can see the full license here: <a
+href="http://choosealicense.com/licenses/lgpl-v3">choosealicense.com/licenses/lgpl-v3</a>/</p>
 </div></div>
 
     <div id="footer">
-  Generated on Wed Sep 11 15:01:27 2013 by
+  Generated on Thu Sep 12 10:42:48 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7 (ruby-2.0.0).
 </div>

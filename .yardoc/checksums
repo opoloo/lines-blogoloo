@@ -1,7 +1,7 @@
 app/models/user.rb abe042bd85e7f0ab20286d3e2d268b61c74cd046
 app/models/author.rb c89040d23212a83112f08a2884605c38c5a4d00a
 app/models/picture.rb 003f4cbea0282d29b1424834b0e9f70cb4657e32
-app/models/article.rb f887bdac6bc47ab693ebcc18e29abf7fc8da335e
+app/models/article.rb dccbda38cd5e9ef3771fbebb64f21fe33ab9cf52
 app/models/authorable.rb bcdd89c7267edc2cc9939e33f1b5244603ce3619
 app/uploaders/picture_uploader.rb e9670bc8d28968c03502332b394511b9ae12e63d
 app/helpers/application_helper.rb c39380edd632c3a5c899e4e595c6395a401949ea
