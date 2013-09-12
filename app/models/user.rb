@@ -1,4 +1,4 @@
-# +Users+ are the administrators of a blog. 
+# {User}s are the administrators of a blog. 
 # Since there is no interface to manage users, they have to be modified via
 # Rails console. 
 # 

@@ -1,10 +1,4 @@
 # MySQL.  Versions 4.1 and 5.0 are recommended.
-# 
-# Install the MYSQL driver
-#   gem install mysql2
-#
-# Ensure the MySQL gem is defined in your Gemfile
-#   gem 'mysql2'
 #
 # And be sure to use new-style password hashing:
 #   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
@@ -14,8 +8,8 @@ development:
   reconnect: false
   database: lines_development
   pool: 5
-  username: devel
-  password: devel
+  username: root
+  password: 
   socket: /var/run/mysqld/mysqld.sock
 
 # Warning: The database defined as "test" will be erased and
@@ -37,6 +31,6 @@ production:
   reconnect: false
   database: lines_production
   pool: 5
-  username: lines
+  username: root
   password: someVerySecretPassword
   socket: /var/run/mysqld/mysqld.sock

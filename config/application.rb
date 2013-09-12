@@ -64,7 +64,7 @@ module Lines
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
-    #RSpec configuration for generators
+    # RSpec configuration for generators
     config.generators do |g|
       g.test_framework :rspec,
         :fixtures => true,
@@ -76,6 +76,7 @@ module Lines
       g.fixture_replacement :factory_girl, :dir => "spec/factories"
     end
 
+    # Require SSL for admin area and login form
     config.middleware.use Rack::SslEnforcer, :only => [%r{^/admin}, "/login", %r{^/sessions}],
       :ignore => '/assets', :strict => true if Rails.env.production?
       

@@ -1,6 +1,6 @@
-# Articles are the core of the lines blog. 
+# {Article}s are the core of the lines blog. 
 # 
-# An Article must have on or more +Author+s through +Authorable+.
+# An {Article} must have on or more {Author}s through {Authorable}.
 # 
 # An article extends FriendlyId to provide meaningful slugs instead of the usual id value. 
 # 
