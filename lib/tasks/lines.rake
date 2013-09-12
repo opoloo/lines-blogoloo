@@ -33,7 +33,7 @@ namespace :lines do
     
     # Validate and create user/author
     u = User.new(email: @emailaddr, password: @pw)
-    a = Author.new(email: @emailaddr, name: @author_name, description: "I'm the owner of this blog")
+    a = Author.new(email: @emailaddr, name: @author_name, description: "I am a Ruby on Rails developer who loves great-looking blog frameworks and cares about sharing beautiful code.")
     if u.valid? && a.valid? && u.save! && a.save!
       puts "\n\nUser created.\n\n"
     else
