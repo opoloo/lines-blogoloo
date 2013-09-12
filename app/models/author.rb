@@ -1,7 +1,7 @@
-# Each Article must have one or more authors. 
+# Each {Article} must have one or more {Author}s. 
 # 
-# An author is unrelated to the currently logged in user. This allows to publish
-# articles by guest authors that don't need an own user account
+# An {Author} is unrelated to the currently logged in user. This allows to publish
+# {Article}s by guest authors that don't need an own user account
 class Author < ActiveRecord::Base
   
   # Attribute access control
