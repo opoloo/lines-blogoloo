@@ -116,13 +116,13 @@ To change the header/meta/footer elements you need to modify <tt>app/views/layou
 Some screenshots to get an impression of the look & feel
 
 === Dashboard
-{<img src="http://lines.opoloo.com/images/screenshot_01.png" width="50%" />}[http://lines.opoloo.com]
+{<img src="http://lines.opoloo.com/images/screenshot_01.png" />}[http://lines.opoloo.com/images/screenshot_01.png]
 
 === Create or edit an article
-{<img src="http://lines.opoloo.com/images/screenshot_02.png" width="50%" />}[http://lines.opoloo.com]
+{<img src="http://lines.opoloo.com/images/screenshot_02.png" />}[http://lines.opoloo.com/images/screenshot_02.png]
 
 === Preview and publish
-{<img src="http://lines.opoloo.com/images/screenshot_03.png" width="50%" />}[http://lines.opoloo.com]
+{<img src="http://lines.opoloo.com/images/screenshot_03.png" />}[http://lines.opoloo.com/images/screenshot_03.png]
 
 
 == License
