@@ -171,13 +171,5 @@
   </div>
 <% end %>
 
-<div id="preview_box"></div>
+<%= render 'admin/articles/formatting_guide' %>
 
-<script type="text/javascript">
-// Show security alert on unload only when something has changed
-$('.edit_article input, .edit_article textarea').bind("keyup change", function() {
-  window.onbeforeunload = function() {
-    return 'You have NOT saved your article. Stop and save if you want to keep your changes.';
-  }
-});
-</script>
