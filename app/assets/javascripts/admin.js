@@ -32,7 +32,7 @@ jQuery.fn.extend({
         this.value += myValue;
         this.focus();
       }
-    })
+    });
   }
 });
 
@@ -51,7 +51,7 @@ $(document).ready(function() {
   // Close error notification
   $('#error_explanation, .close').on('click', function(e){
     $('#error_explanation').slideUp();
-  })
+  });
   
   // Insert image into content of the post
   $(".insert-image").live('click', function(e){
@@ -78,7 +78,7 @@ $(document).ready(function() {
     
     if ($(this).hasClass('selected_image')) { // deselect selected short_hero image
       $(".selected_image").removeClass('selected_image');
-      $("#article_short_hero_image, #article_hero_image_file").val('');      
+      $("#article_short_hero_image, #article_hero_image_file").val('');
     } else if ($(this).hasClass('uploaded_image')) { // select former uploaded hero_image
       $(".selected_image").removeClass('selected_image');
       //TODO: How to get the selected value?
@@ -89,7 +89,7 @@ $(document).ready(function() {
       $('#article_hero_image_file, #article_hero_image, #article_hero_image_cache').val('');
       $(".selected_image").removeClass('selected_image');
       $(this).addClass("selected_image");
-      $("#article_short_hero_image").val(value);      
+      $("#article_short_hero_image").val(value);
     }
     $('#hero_image_name').text('');
     $('.choose-file').html("Change Image");
@@ -99,7 +99,7 @@ $(document).ready(function() {
   // If a custom image is selected of the hard drive, the current selected default image will be unselected
   $('#article_hero_image').on('change', function(e){
     $(".selected_image").removeClass('selected_image');
-    $("#article_short_hero_image").val('');      
+    $("#article_short_hero_image").val('');
   });
 
   // Scroll to the top of the page
@@ -116,7 +116,7 @@ $(document).ready(function() {
   if (window.File && window.FileList && window.FileReader) {
     var hero_input      = document.getElementById('article_hero_image');  // Hero image input
     var document_input  = document.getElementById('article_document');    // Document input
-    if (typeof(hero_input) !== 'undefined' && hero_input != null && typeof(document_input) !== 'undefined' && document_input != null) {
+    if (typeof(hero_input) !== 'undefined' && hero_input !== null && typeof(document_input) !== 'undefined' && document_input !== null) {
       hero_input.addEventListener('change', handleFiles, false);          // Add listener to the hero image input
       document_input.addEventListener('change', handleFiles, false);      // Add listener to the document input
     }
@@ -195,7 +195,7 @@ $(document).ready(function() {
   $('.edit_article input, .edit_article textarea, .new_article input, .new_article textarea').bind("keyup change", function() {
     window.onbeforeunload = function() {
       return 'You have NOT saved your article. Stop and save if you want to keep your changes.';
-    }
+    };
   });
 
 });
