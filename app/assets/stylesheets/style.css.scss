@@ -1,10 +1,16 @@
-
 $darkgrey: #333;
 $lightgrey: #666;
 $orange: #e8581e;
 
-/*------------------------  1. FONTS  -----------------------*/
+@mixin addTransition($x) {
+  transition: all $x+s ease;
+  -o-transition: all $x+s ease;
+  -ms-transition: all $x+s ease;
+  -moz-transition: all $x+s ease;
+  -webkit-transition: all $x+s ease;
+}
 
+/*------------------------  1. FONTS  -----------------------*/
 
 @font-face {
   font-family: 'BPmono';
@@ -40,61 +46,12 @@ $orange: #e8581e;
 }
 
 @font-face {
-  font-family: 'Saxmono';
-  src: url('/fonts/saxmono-webfont.eot');
-  src: url('/fonts/saxmono-webfont.eot?#iefix') format('embedded-opentype'),
-  url('/fonts/saxmono-webfont.woff') format('woff'),
-  url('/fonts/saxmono-webfont.ttf') format('truetype'),
-  url('/fonts/saxmono-webfont.svg#saxmono-webfont') format('svg');
-  font-weight: normal;
-  font-style: normal;
-
-}
-
-
-
-@font-face {
-  font-family: 'JosefinSans';
-  src: url('/fonts/JosefinSansStd-Light-webfont.eot');
-  src: url('/fonts/JosefinSansStd-Light-webfont.eot?#iefix') format('embedded-opentype'),
-  url('/fonts/JosefinSansStd-Light-webfont.woff') format('woff'),
-  url('/fonts/JosefinSansStd-Light-webfont.ttf') format('truetype'),
-  url('/fonts/JosefinSansStd-Light-webfont.svg#JosefinSansStd-Light-webfont') format('svg');
-  font-weight: normal;
-  font-style: normal;
-
-}
-
-@font-face {
   font-family: 'Museo';
   src: url('/fonts/Museo500-Regular-webfont.eot');
   src: url('/fonts/Museo500-Regular-webfont.eot?#iefix') format('embedded-opentype'),
   url('/fonts/Museo500-Regular-webfont.woff') format('woff'),
   url('/fonts/Museo500-Regular-webfont.ttf') format('truetype'),
   url('/fonts/Museo500-Regular-webfont.svg#Museo500-Regular-webfont') format('svg');
-  font-weight: normal;
-  font-style: normal;
-
-}
-
-@font-face {
-  font-family: 'Ubuntu';
-  src: url('/fonts/Ubuntu-R-webfont.eot');
-  src: url('/fonts/Ubuntu-R-webfont.eot?#iefix') format('embedded-opentype'),
-  url('/fonts/Ubuntu-R-webfont.woff') format('woff'),
-  url('/fonts/Ubuntu-R-webfont.ttf') format('truetype'),
-  url('/fonts/Ubuntu-R-webfont.svg#Ubuntu-R-webfont') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'UbuntuItalic';
-  src: url('/fonts/Ubuntu-RI-webfont.eot');
-  src: url('/fonts/Ubuntu-RI-webfont.eot?#iefix') format('embedded-opentype'),
-  url('/fonts/Ubuntu-RI-webfont.woff') format('woff'),
-  url('/fonts/Ubuntu-RI-webfont.ttf') format('truetype'),
-  url('/fonts/Ubuntu-RI-webfont.svg#Ubuntu-R-webfont') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -110,14 +67,13 @@ $orange: #e8581e;
   font-style: normal;
 }
 
-
 @font-face {
-  font-family: 'Museo';
-  src: url('/fonts/Museo500-Regular-webfont.eot');
-  src: url('/fonts/Museo500-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-  url('/fonts/Museo500-Regular-webfont.woff') format('woff'),
-  url('/fonts/Museo500-Regular-webfont.ttf') format('truetype'),
-  url('/fonts/Museo500-Regular-webfont.svg#Museo500-Regular-webfont') format('svg');
+  font-family: 'Ubuntu';
+  src: url('/fonts/Ubuntu-R-webfont.eot');
+  src: url('/fonts/Ubuntu-R-webfont.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/Ubuntu-R-webfont.woff') format('woff'),
+  url('/fonts/Ubuntu-R-webfont.ttf') format('truetype'),
+  url('/fonts/Ubuntu-R-webfont.svg#Ubuntu-R-webfont') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -134,6 +90,17 @@ $orange: #e8581e;
 }
 
 @font-face {
+  font-family: 'UbuntuItalic';
+  src: url('/fonts/Ubuntu-RI-webfont.eot');
+  src: url('/fonts/Ubuntu-RI-webfont.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/Ubuntu-RI-webfont.woff') format('woff'),
+  url('/fonts/Ubuntu-RI-webfont.ttf') format('truetype'),
+  url('/fonts/Ubuntu-RI-webfont.svg#Ubuntu-R-webfont') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'UbuntuLight';
   src: url('/fonts/Ubuntu-L-webfont.eot');
   src: url('/fonts/Ubuntu-L-webfont.eot?#iefix') format('embedded-opentype'),
@@ -143,7 +110,6 @@ $orange: #e8581e;
   font-weight: normal;
   font-style: normal;
 }
-
 
 /*-----------------------------------------------------------*/
 /*-----------------------------------------------------------*/
@@ -210,14 +176,14 @@ ul {
 div.article_header h1.title {
   font-family: 'Museo';
   font-weight:normal;
-  color:#e8581e;
+  color: $orange;
   font-size:1.8em;
   line-height:1.01em;
   margin:30px 0 10px 0;
   width:100%;
   letter-spacing: -0.03em;
   a {
-    color:#e8581e;
+    color: $orange;
   }
   a:hover {
     color:$darkgrey;
@@ -239,11 +205,7 @@ strong, bold {
 a, input[type=submit] {
   text-decoration: none;
   color:$darkgrey;
-  -webkit-transition: 0.3s all ease;
-  -moz-transition: 0.3s all ease;
-  -ms-transition: 0.3s all ease;
-  -o-transition: 0.3s all ease;
-  transition: 0.3s all ease;
+  @include addTransition(0.3);
 }
 
 a:hover {
@@ -493,8 +455,12 @@ div.article_footer {
   color:#808080;
   font-size:0.8em;
   padding:0px 80px;
-  a {color:#e8581e;}
-  a:hover {color:#333;}
+  a {
+    color: $orange;
+  }
+  a:hover {
+    color: $darkgrey;
+  }
 }
 
 div.article_googleplus {
@@ -616,7 +582,7 @@ div.more-link {
     font-family: 'UbuntuItalic';
   }
   a:hover {
-    color:#333;
+    color: $darkgrey;
   }
   hr {
     background-color:#ccc;
@@ -654,7 +620,7 @@ div.more-link {
   }
   .project-title {
     font-family: 'Museo';
-    color:#333;
+    color: $darkgrey;
     display:block;
     font-size:33px;
     margin:3px 0px 15px 0px;
@@ -662,7 +628,7 @@ div.more-link {
   .weekday {
     display: block;
     font-family: 'MuseoLight';
-    color:#333;
+    color: $darkgrey;
   }
   a {
     color:#999;
@@ -708,11 +674,11 @@ div.more-link {
 }
 #footer h5 {
   font-size:30px;
-  color:#333;
+  color: $darkgrey;
   font-weight: normal;
   margin:0 0 10px 0;
   a {
-    color:#333;
+    color: $darkgrey;
   }
 }
 
